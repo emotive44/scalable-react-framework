@@ -1,4 +1,4 @@
-.container { margin: 0.5rem; display: flex; width: 100%; height: 100%; }
+.container { display: flex; width: 100%; height: 100%; }
   .container.top { flex-direction: column; }
   .container.bottom { flex-direction: column-reverse; }
   .container.left { flex-direction: row; }
