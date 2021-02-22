@@ -15,7 +15,7 @@ export { default as Tooltip } from './Tooltip/Tooltip';
 export { default as Spinner } from './Spinner/Spinner';
 export { default as InfoBox } from './InfoBox/InfoBox';
 export { default as Divider } from './Divider/Divider';
-export { default as RadionBtn } from './Radio/RadioBtn';
+export { default as RadioBtn } from './Radio/RadioBtn';
 export { default as NotFound } from './NotFound/NotFound';
 export { default as CheckBox } from './CheckBox/CheckBox';
 export { default as Carousel } from './Carousel/Carousel';

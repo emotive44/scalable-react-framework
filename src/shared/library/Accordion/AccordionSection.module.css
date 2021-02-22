@@ -11,4 +11,4 @@
     .section .title .arrow { color: black; margin-right: 0.3rem; font-size: 15px; display: flex; align-items: center; }
       .section .title .arrow .open { transition: 0.4s ease-in-out; transform: rotate(180deg); }
       .section .title .arrow .close { transition: 0.4s ease-in-out; transform: rotate(0deg); }
-  .section .children { margin: 0.5rem 1rem; overflow: hidden; transition: 0.7s ease-in-out; transition-property: max-height margin-top; }
+  .section .children { margin: 0.5rem 1rem; overflow: hidden; transition: 0.5s ease-in-out; transition-property: max-height margin-top; }

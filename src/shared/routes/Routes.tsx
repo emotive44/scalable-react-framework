@@ -5,6 +5,7 @@ import PrivateRoute from './PrivateRoute';
 
 const Home = lazy(() => import('../../modules/Home/Home'));
 const Dashboard = lazy(() => import('../../modules/Dashboard/Dashboard'));
+const UIComponents = lazy(() => import('../../modules/UIComponents/UIComponents'));
 
 
 interface RoutesProps {
@@ -29,6 +30,7 @@ const Routes:FC<RoutesProps> = ({ isAuth }) => {
       <Switch>
         <Suspense fallback={Loading}>
           <Route exact path="/" component={Home} />
+          <Route path='/ui-components' component={UIComponents} />
           <PrivateRoute exact path="/dashboard" isAuth={isAuth} component={Dashboard} />
         </Suspense>
       </Switch>

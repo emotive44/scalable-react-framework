@@ -23,3 +23,7 @@ html {
 .mono {
   font-family: monospace !important;
 }
+
+@supports (-moz-appearance:none) {
+  html { font-size: 11px; }
+}

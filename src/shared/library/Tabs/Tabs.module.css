@@ -3,7 +3,7 @@
   .container.bottom { flex-direction: column-reverse; }
   .container.left { flex-direction: row; }
   .container.right { flex-direction: row-reverse; }
-  .container .tabs { display: flex; justify-content: space-around; border: 1.2px solid gray; border-radius: 5px; }
+  .container .tabs { display: flex; justify-content: space-around; border: 1.3px solid gray; border-radius: 5px; border-bottom: 1.5px solid gray; }
   .container.left .tabs,
   .container.right .tabs { flex-direction: column; }
     .container .tabs .tab-link { display: flex; align-items: center; justify-content: center; min-width: 15%; min-height: 20%; padding: 0.5rem; border: 3px solid transparent; transition: 0.2s ease-in-out; transition-property: color background; }
