@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './shared/routes/Routes';
 
-function App() {
+const App:FC = () => {
   return (
     <Router>
       <div>
         React
+        <Routes isAuth={false} />
       </div>
     </Router>
   );
