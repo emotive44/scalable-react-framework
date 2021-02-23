@@ -1,0 +1,36 @@
+@import 'functions.scss';
+
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+@mixin break-points($point) {
+  @if ($point == 'desktop-large') {
+    @media(max-width: 1600px) {
+      @content;
+    }
+  } 
+  @else if ($point == 'desktop') {
+    @media(max-width: 1250px) {
+      @content;
+    }
+  } 
+  @else if ($point == 'tablet') {
+    @media(max-width: 900px) {
+      @content;
+    }
+  } 
+  @else if ($point == 'phone') {
+    @media(max-width: 650px) {
+      @content;
+    }
+  }
+}
+
+// for some edge cases and exact screens pixels
+@mixin custom-device($screen) {
+  @media (max-width: $screen + 'px') {
+    @content;
+  }
+}
