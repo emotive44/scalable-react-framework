@@ -1,5 +1,7 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import classes from './UIComponents.module.css';
+
+import useForm from '../../shared/hooks/useForm';
 
 import {
   Input, TextArea, CheckBox, RadioBtn,
@@ -11,41 +13,45 @@ import {
 } from '../../shared/library';
 
 
-interface IState {
-  [key: string] : any,
-  select        : any, 
-  multiSelect   : any[]
-}
-
 const UIComponents:FC = () => {
-  const [state, setState] = useState<IState>({
-    age         : '', 
-    job         : '',
-    bio         : '',
-    name        : '',
-    date        : '',
-    email       : '',
-    search      : '',
-    salary      : '',
-    password    : '',
-    thirdBio    : '',
-    secondBio   : '',
-    thirdEmail  : '',
-    secondEmail : '',
-    range       : '',
-    select      : '',
-    phone       : '',
-    multiSelect : [],
-    male        : false,
-    female      : false,
-    other       : false,
-    radio1      : false,
-    radio2      : false,
-    toggle1     : false,
-    toggle2     : false,
-  });
-  const [radioValue, setRadioValue] = useState('radio1');
-  const radioBtns = { radio1: false, radio2: false }
+  const { 
+    state, 
+    activeRadio,
+    dateChangeHandler,
+    inputChangeHandler,
+    phoneChangeHandler,
+    selectChangeHandler,
+    radioBtnChangeHandler,
+    checkBoxChangeHandler,
+  } = useForm(
+    {
+      age           : '',
+      job           : '',
+      bio           : '',
+      car           : '',
+      name          : '',
+      cars          : [],
+      email         : '',
+      phone         : '',
+      range         : '',
+      salary        : '',
+      search        : '',
+      password      : '',
+      thirdBio      : '',
+      secondBio     : '',
+      thirdEmail    : '',
+      secondEmail   : '',
+      radio1        : true,
+      male          : false,
+      other         : false,
+      female        : false,
+      radio2        : false,
+      toggle1       : false,
+      toggle2       : false,
+    },
+    'radio1',
+    { radio1: false, radio2: false }
+  );
 
   const arrayWithImgs = [
     'https://images.unsplash.com/photo-1581320546160-0078de357255?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=700&q=80',
@@ -56,114 +62,6 @@ const UIComponents:FC = () => {
     'https://images.unsplash.com/photo-1567364301956-d143bd377905?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80',
     'https://images.unsplash.com/photo-1564097449148-f629e6dc0402?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=700&q=80',
   ];
-
-  const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, name } = e.target;
-
-    setState(prev => ({
-        ...prev,
-        [name] : value,
-    }));
-  }
-
-  const phoneChangeHandler = (e?: React.ChangeEvent<HTMLInputElement>, prefix?: string, phoneName?: string) => {
-    if(e && e.target) {
-      const { value, name } = e.target;
-
-      // forbid user delete a prefix
-      if(value.length < prefix?.length!) {
-        setState(prev => ({
-          ...prev,
-          [name]: prefix,
-        }));
-
-        return;
-      }
-
-      // const regex = new RegExp(`^[${prefix}]+[0-9]{${prefix?.length! + 8}}`);
-      // if(!regex.test(value)) {
-      //   setErr('please enter a valid number')
-      // }
-
-      setState(prev => ({
-        ...prev,
-        [name] : value,
-      }));
-
-    } else {
-      setState(prev => ({
-        ...prev,
-        [phoneName!] : prefix,
-      }));
-    }
-  }
-
-  const dateChangeHandler = (date: string, name: string) => {
-    setState(prev => ({
-      ...prev,
-      [name]: date,
-    }))
-  }
-
-  const checkBoxChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
-
-    setState(prev => ({
-      ...prev,
-      [name]: checked,
-    }));
-  }
-
-  const radioBtnChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, checked } = e.target;
-    
-    setState(prev => ({
-      ...prev,
-      ...radioBtns,
-      [name]: checked,
-    }));
-
-    setRadioValue(value);
-  }
-
-  const selectChangeHandler = (value: any, multi?: false, remove?: false) => {
-    // reset values for multiselect
-    if(multi && value === '') {
-      setState(prev => ({
-        ...prev,
-        multiSelect: [],
-      }));
-      return;
-    }
-
-    // remove selected values from multi select
-    if(multi && remove) {
-      if(typeof value !== 'object'){
-        setState(prev => ({
-          ...prev,
-          multiSelect: prev.multiSelect.filter(selected => selected !== value),
-        }));
-      } else {
-        setState(prev => ({
-          ...prev,
-          multiSelect: prev.multiSelect.filter(selected => selected.id !== value.id),
-        }));
-      }
-      return;
-    }
-
-    if(!multi) {
-      setState(prev => ({
-        ...prev,
-        select: value,
-      }));
-    } else {
-      setState(prev => ({
-        ...prev,
-        multiSelect: [...prev.multiSelect, value],
-      }));
-    }
-  }
 
   const submitHandler = () => {
     console.log(state);
@@ -199,11 +97,11 @@ const UIComponents:FC = () => {
 
   return (
     <>
-      {/* <Modal 
+      <Modal 
         main                  = {ModalMain}
         title                 = "Modal Title"
         footer                = {ModalFooter}
-      /> */}
+      />
     
       <span onClick={submitHandler}>Submit</span>
       <div className={classes.app}>
@@ -368,16 +266,14 @@ const UIComponents:FC = () => {
             leftLabel
             name              = "radio1"
             label             = "Radio1"
-            value             = "radio1"
             callbackChange    = {radioBtnChangeHandler}
-            checked           = {radioValue === "radio1"}
+            checked           = {activeRadio === "radio1"}
           />
           <RadioBtn 
             name              = "radio2"
             label             = "Radio2"
-            value             = "radio2"
             callbackChange    = {radioBtnChangeHandler}
-            checked           = {radioValue === "radio2"}
+            checked           = {activeRadio === "radio2"}
           />
         </div>
 
@@ -585,9 +481,10 @@ const UIComponents:FC = () => {
           <Select 
             clearable
             searchable
+            name                = "car"
             optsMaxHeight       = {300}
             label               = "Car Model"
-            value               = {state.select}
+            value               = {state.car}
             placeholder         = "Select car...."
             err                 = "Please select value"
             onChange            = {selectChangeHandler}
@@ -629,9 +526,10 @@ const UIComponents:FC = () => {
             clearable
             searchable
             optsMaxHeight       = {300}
+            name                = "cars"
             placeholder         = "Select car...."
             label               = "Car Model Multi"
-            value               = {state.multiSelect}
+            value               = {state.cars}
             onChange            = {selectChangeHandler}
           > 
             <Option 
@@ -709,12 +607,12 @@ const UIComponents:FC = () => {
       />
 
       <div className={classes.flex}>
-        <Tag type="warning" text="Some Text" closeClickCallback/>
-        <Tag type="dark" text="Some Text" closeClickCallback />
+        <Tag type="warning" text="Some Text" closeClickCallback={() => {}} />
+        <Tag type="dark" text="Some Text" closeClickCallback={() => {}} />
         <Tag type="success" text="Some Text" />
-        <Tag type="light" text="Text" closeClickCallback />
-        <Tag type="danger" text="Text" icon={<i className="fas fa-user" />} closeClickCallback />
-        <Tag type="secondary" closeClickCallback> 
+        <Tag type="light" text="Text" closeClickCallback={() => {}} />
+        <Tag type="danger" text="Text" icon={<i className="fas fa-user" />} closeClickCallback={() => {}} />
+        <Tag type="secondary" closeClickCallback={() => {}}> 
           <p>ONE</p>
           <span>Username</span>
           <small 

@@ -16,14 +16,15 @@ interface IChildProps {
   props: {
     value              : any
     label             ?: string,
-    icon              ?: ReactElement,
     children           : ReactNode,
-    customTempValue   ?: ReactNode
+    customTempValue   ?: ReactNode,
+    icon              ?: ReactElement,
   },
 }
 
 interface SelectProps {
   value                : any, // value, which will send to server
+  name                 : string,
   optsMaxHeight        : number,
   err                 ?: string,
   label               ?: string,
@@ -37,6 +38,7 @@ interface SelectProps {
 }
 
 const Select:FC<SelectProps> = ({
+  name,
   err,
   label,
   multiple,
@@ -84,9 +86,9 @@ const Select:FC<SelectProps> = ({
 
     // if have multiple select, we have to reset value on empty array, not a string
     if(multiple) {
-      onChange('', true);
+      onChange('', name, true);
     } else {
-      onChange('');
+      onChange('', name);
     }
   }
 
@@ -155,6 +157,7 @@ const Select:FC<SelectProps> = ({
 
     return (
       <SelectOption
+        name            = {name}
         icon            = {icon}
         value           = {value}
         label           = {label}

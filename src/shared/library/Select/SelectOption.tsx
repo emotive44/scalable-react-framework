@@ -6,19 +6,21 @@ import { IOption } from './Select';
 
 
 interface SelectOptionProps {
+  currValue          : any,
   value              : string,
+  name               : string,
   label             ?: string,
   setSelectValue     : Function,
   onChange           : Function,
   closeSelect        : Function,
   multiValues       ?: IOption[]
   template          ?: ReactNode,
-  icon              ?: ReactElement,
-  currValue          : any,
   customTempValue   ?: ReactNode,
+  icon              ?: ReactElement,
 }
 
 const SelectOption:FC<SelectOptionProps> = ({
+  name,
   icon,
   value,
   label,
@@ -44,7 +46,7 @@ const SelectOption:FC<SelectOptionProps> = ({
 
   // remove option value from selected array with options
   const removeSelectedValue = (value: any) => {
-    onChange(value, true, true);
+    onChange(value, name, true, true);
   }
 
   let multiContent: ReactNode = null;
@@ -119,13 +121,13 @@ const SelectOption:FC<SelectOptionProps> = ({
   const clickHendler = () => {
     if(!Array.isArray(currValue) && !checked) {
       closeSelect();  // on every choosed option we close select popup
-      onChange(value); // set value for select 
+      onChange(value, name); // set value for select 
       setSelectValue(customTempValue ? customTempValue : content); // if option is not only text we set current template like a value
     }
 
     if(Array.isArray(currValue)){
       // with multi select if options is alredy checked after second click will be unchecked and removed
-      !checked ? onChange(value, true) : onChange(value, true, true);
+      !checked ? onChange(value, name, true) : onChange(value, name, true, true);
     }
   }
 

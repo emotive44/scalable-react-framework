@@ -6,7 +6,6 @@ interface RadioBtnProps {
   callbackChange    : React.ChangeEventHandler<HTMLInputElement>;
   checked           : boolean;
   name              : string;
-  value             : string;
   id                ?: string;
   label             ?: string;
   leftLabel         ?: boolean;
@@ -16,7 +15,6 @@ const RadioBtn: FC<RadioBtnProps> = ({
   id,
   name,
   label,
-  value,
   checked,
   leftLabel,
   callbackChange,
@@ -48,7 +46,6 @@ const RadioBtn: FC<RadioBtnProps> = ({
             id          = {id} 
             name        = {name}
             type        = "radio" 
-            value       = {value}
             checked     = {checked}
             onChange    = {callbackChange}
           />
