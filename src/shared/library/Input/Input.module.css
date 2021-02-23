@@ -1,22 +1,16 @@
 .input { width: 100%; height: auto; position: relative; }
   .input .label.top { bottom: 2.5rem; }
-  .input.medium .icon { top: 0.08rem; height: 95%; }
   .input.medium .inputtag { height: 3rem; font-size: 1.5rem; }
   .input.medium .label { bottom: 0.1rem; font-size: 1.5rem; }
     .input.medium .label.top { bottom: 2.6rem; }
-  
-  .input.large .icon { top: 0.08rem; height: 96%; }
-  @supports (-moz-appearance:none) { .input.large .icon { height: 96%; } } /* only for firefox */
   .input.large .inputtag { height: 3.5rem; font-size: 1.6rem; }
   .input.large .label { bottom: 0.4rem; font-size: 1.6rem; }
     .input.large .label.top { bottom: 2.85rem; left: 0.1rem; }
   .input.large.inside .inputtag { padding-top: 1.5rem; }
   .input.large.inside .label.top { font-size: 1.1rem; left: 0.5rem; bottom: 1.5rem; }
   .input.large.inside .label.in { left: 3.5rem; }
-
-  .icon { top: 0.07rem;  margin-left: -0.015rem; width: 3rem; right: 0.09rem; height: 94%; padding: 0 0.5rem; position: absolute; background: lightgrey; display: flex; align-items: center; }
-  @supports (-moz-appearance:none) { .icon { margin-left: -0.04rem; } } /* only for firefox */
-    .icon.left { left: 0.09rem; }
+  .icon { top: 0.8px; width: 3rem; right: 0.9px; bottom: 0.7px; z-index: 1; padding: 0 0.5rem; position: absolute; background: lightgrey; display: flex; align-items: center; }
+    .icon.left { left: 0.7px; }
     .icon.left + .label { left: 3.5rem; }
     .icon.left + input, 
     .icon.left + .label + input { padding-left: 3.4rem; }

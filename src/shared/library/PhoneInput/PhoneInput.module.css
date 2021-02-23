@@ -6,4 +6,4 @@
   .phone-input .input { border: 1px solid black; border-left: 0; padding-left: 1rem; height: 3rem; border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
 .errmsg { color: red; width: 99%; font-size: 1.3rem; margin: 0 0 0 5px; }
 
-.country-flags { width: 26px; height: 16px; margin-right: -1rem; margin-bottom: -0.1rem; }
+.country-flags { width: 26px; height: 16px; margin-right: -1rem; margin-bottom: -0.3rem; }
