@@ -24,7 +24,7 @@ interface IChildProps {
 
 interface SelectProps {
   value                : any, // value, which will send to server
-  name                 : string,
+  name                ?: string,
   optsMaxHeight        : number,
   err                 ?: string,
   label               ?: string,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { validate } from '../utils/validators';
 
 interface IState {
   [key: string]: any,
@@ -7,10 +7,16 @@ interface IState {
 
 const useForm = (initState: IState, defauldActiveRadio?: string, radioBtns?: Object) => {
   const [state, setState] = useState(initState);
+  const [errors, setErrors] = useState(initState);
   const [activeRadio, setActiveRadio] = useState(defauldActiveRadio);
 
   const radioBtnChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
+
+    setErrors(prev => ({
+      ...prev,
+      [name]: validate('', name),
+    }));
     
     setState(prev => ({
       ...prev,
@@ -23,6 +29,11 @@ const useForm = (initState: IState, defauldActiveRadio?: string, radioBtns?: Obj
 
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
+    
+    setErrors(prev => ({
+      ...prev,
+      [name]: validate(value, name),
+    }));
 
     setState(prev => ({
         ...prev,
@@ -33,6 +44,11 @@ const useForm = (initState: IState, defauldActiveRadio?: string, radioBtns?: Obj
   const checkBoxChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
 
+    setErrors(prev => ({
+      ...prev,
+      [name]: validate('', name),
+    }));
+
     setState(prev => ({
       ...prev,
       [name]: checked,
@@ -42,6 +58,11 @@ const useForm = (initState: IState, defauldActiveRadio?: string, radioBtns?: Obj
   const phoneChangeHandler = (e?: React.ChangeEvent<HTMLInputElement>, prefix?: string, phoneName?: string) => {
     if(e && e.target) {
       const { value, name } = e.target;
+      
+      setErrors(prev => ({
+        ...prev,
+        [name]: validate(value, name, prefix),
+      }));
 
       // forbid user delete a prefix
       if(value.length < prefix?.length!) {
@@ -52,11 +73,6 @@ const useForm = (initState: IState, defauldActiveRadio?: string, radioBtns?: Obj
 
         return;
       }
-
-      // const regex = new RegExp(`^[${prefix}]+[0-9]{${prefix?.length! + 8}}`);
-      // if(!regex.test(value)) {
-      //   setErr('please enter a valid number')
-      // }
 
       setState(prev => ({
         ...prev,
@@ -72,6 +88,11 @@ const useForm = (initState: IState, defauldActiveRadio?: string, radioBtns?: Obj
   }
 
   const dateChangeHandler = (date: string, name: string) => {
+    setErrors(prev => ({
+      ...prev,
+      [name]: validate(date, name),
+    }));
+
     setState(prev => ({
       ...prev,
       [name]: date,
@@ -79,6 +100,11 @@ const useForm = (initState: IState, defauldActiveRadio?: string, radioBtns?: Obj
   }
 
   const selectChangeHandler = (value: any, name: string, multi?: false, remove?: false) => {
+    setErrors(prev => ({
+      ...prev,
+      [name]: validate(value, name),
+    }));
+
     // reset values for multiselect
     if(multi && value === '') {
       setState(prev => ({
@@ -124,8 +150,10 @@ const useForm = (initState: IState, defauldActiveRadio?: string, radioBtns?: Obj
 
   return { 
     state,
+    errors,
     activeRadio,
     setState, 
+    setErrors,
     dateChangeHandler, 
     inputChangeHandler, 
     phoneChangeHandler, 

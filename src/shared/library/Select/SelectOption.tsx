@@ -8,7 +8,7 @@ import { IOption } from './Select';
 interface SelectOptionProps {
   currValue          : any,
   value              : string,
-  name               : string,
+  name              ?: string,
   label             ?: string,
   setSelectValue     : Function,
   onChange           : Function,

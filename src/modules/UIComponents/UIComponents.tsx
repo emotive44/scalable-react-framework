@@ -16,6 +16,7 @@ import {
 const UIComponents:FC = () => {
   const { 
     state, 
+    errors,
     activeRadio,
     dateChangeHandler,
     inputChangeHandler,
@@ -112,7 +113,7 @@ const UIComponents:FC = () => {
             name              = "age"
             type              = "number"
             value             = {state.age}
-            err               = "Error message"
+            err               = {errors.age}
             callbackChange    = {inputChangeHandler}
           />
         </div>
@@ -562,8 +563,8 @@ const UIComponents:FC = () => {
           name                  = 'phone'
           label                 = 'Your Phone'
           value                 = {state.phone}
+          err                   = {errors.phone}
           callbackChange        = {phoneChangeHandler}
-          err                   = 'Plese enter correct number'
         />
       </div>
 
