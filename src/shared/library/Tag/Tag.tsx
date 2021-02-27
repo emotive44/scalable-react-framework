@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import classes from './Tag.module.css';
+import classes from './Tag.module.scss';
 
 
 type TColor = 'secondary' | 'success' | 'danger' | 'warning' | 'dark' | 'light';

@@ -33,3 +33,15 @@
     }
   }
 }
+
+@mixin background-hover($base, $hover) {
+  @include set-background($base);
+
+  @if($base == transparent) {
+    color: $hover;
+  }
+
+  &:hover {
+    @include set-background($hover);
+  }
+}
