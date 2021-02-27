@@ -1,36 +1,35 @@
 @import 'functions.scss';
+@import 'variables.scss';
 
 @mixin set-background($color) {
   background-color: $color;
   color: set-text-color($color);
 }
 
-@mixin break-points($point) {
+@mixin break-points($point, $pixels: none) {
   @if ($point == 'desktop-large') {
-    @media(max-width: 1600px) {
+    @media(max-width: $breakpoint-desktop-large) {
       @content;
     }
   } 
   @else if ($point == 'desktop') {
-    @media(max-width: 1250px) {
+    @media(max-width: $breakpoint-desktop) {
       @content;
     }
   } 
   @else if ($point == 'tablet') {
-    @media(max-width: 900px) {
+    @media(max-width: $breakpoint-tablet) {
       @content;
     }
   } 
   @else if ($point == 'phone') {
-    @media(max-width: 650px) {
+    @media(max-width: $breakpoint-phone) {
       @content;
     }
   }
-}
-
-// for some edge cases and exact screens pixels
-@mixin custom-device($screen) {
-  @media (max-width: $screen + 'px') {
-    @content;
+  @else if ($point == 'custom') {
+    @media(max-width: $pixels + px) {
+      @content;
+    }
   }
 }

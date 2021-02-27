@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../shared/store/store';
 import { debouncedLogin, debouncedLogout } from '../../shared/store/actions/auth';
 import { GET_POSTS } from '../../shared/graphql/queries/posts';
+import classes from './Home.module.scss';
 
 
 interface HomeProps {
@@ -35,7 +36,7 @@ const Home:FC<HomeProps> = () => {
   
   return (
     <div>
-      <h1>Home</h1>
+      <h1 className={classes.home}>Home</h1>
       {/* <p>{JSON.stringify(data)}</p> */}
       {isAuth 
         ? <p>You are logged in</p>

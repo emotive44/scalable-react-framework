@@ -1,0 +1,7 @@
+@import '../../shared//styles/global/mixins';
+
+.home {
+  @include break-points($point: custom, $pixels: 190) {
+    color: red;
+  }
+}
