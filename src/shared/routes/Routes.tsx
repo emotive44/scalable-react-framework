@@ -3,6 +3,7 @@ import { Route, Router, Switch, useHistory } from 'react-router-dom';
 
 import PrivateRoute from './PrivateRoute';
 
+import Navbar from '../components/Navbar/Navbar';
 const Home = lazy(() => import('../../modules/Home/Home'));
 const Dashboard = lazy(() => import('../../modules/Dashboard/Dashboard'));
 const UIComponents = lazy(() => import('../../modules/UIComponents/UIComponents'));
@@ -27,6 +28,7 @@ const Routes:FC<RoutesProps> = ({ isAuth }) => {
 
   return (
     <Router history={history}>
+      <Navbar />
       <Switch>
         <Suspense fallback={Loading}>
           <Route exact path="/" component={Home} />

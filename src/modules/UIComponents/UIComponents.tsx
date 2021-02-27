@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import classes from './UIComponents.module.css';
+import classes from './UIComponents.module.scss';
 
 import useForm from '../../shared/hooks/useForm';
 
