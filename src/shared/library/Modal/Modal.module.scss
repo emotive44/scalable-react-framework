@@ -1,4 +1,4 @@
-@import '../../styles/global/colors';
+@import '../styles.scss';
 
 
 .modal { display: flex; flex-direction: column; position: fixed; top: 18%; left: 50%; z-index: 30; opacity: 1; visibility: visible; min-width: 45rem; max-width: 60%; min-height: 15rem; border: 1px solid $border-secondary-color; background: $modal-background-color; border-radius: 7px; transform: translateX(-50%); transition: 1s ease-in-out; transition-property: opacity visibility; }

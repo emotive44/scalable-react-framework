@@ -1,4 +1,4 @@
-@import '../../styles/global/colors';
+@import '../styles.scss';
 
 
 .infobox { background-color: $infobox-background-color; border: 1px solid $border-color; padding: 4px; border-radius: 3px; width: 100%; }

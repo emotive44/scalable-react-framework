@@ -1,5 +1,5 @@
 @import '../../styles/global/mixins';
-@import '../../styles/global/colors';
+@import '../styles.scss';
 
 
 .link { display: inline-flex; align-items: flex-end; min-width: 10rem; font-size: 1.6rem; cursor: pointer; }

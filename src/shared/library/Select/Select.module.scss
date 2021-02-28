@@ -1,4 +1,4 @@
-@import '../../styles/global/colors';
+@import '../styles.scss';
 
 
 .container { position: relative; height: auto; cursor: default;  min-height: 2.5rem; max-height: 100%; display: flex; justify-content: space-between; align-items: center; border: 1px solid $border-color; border-radius: 4px; }

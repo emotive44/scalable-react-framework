@@ -1,4 +1,5 @@
-@import '../../styles/global/colors';
+@import '../styles.scss';
+
 
 .phone-input { display: flex; }
   .phone-input .select { width: 9rem; height: 3rem; border-radius: 0; border-bottom-left-radius: 3px; border-top-left-radius: 3px; }

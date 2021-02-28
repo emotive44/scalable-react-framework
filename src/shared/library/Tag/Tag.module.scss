@@ -1,18 +1,20 @@
+@import '../styles.scss';
 @import '../../styles/global/mixins';
 
+
 .tag { display: inline-flex; align-items: center; margin: 0 0.5rem 0.5rem 0.5rem; cursor: default; font-weight: 500; font-size: 1.5rem; border-radius: 3px; } 
-  .tag.secondary { @include set-background(#898a8b); }
-  .tag.success { @include set-background(#339e66); }
-  .tag.danger { @include set-background(#cc5058); }
-  .tag.warning { @include set-background(#ffe26b); }
-  .tag.light { @include set-background(#c5c6c7); }
-  .tag.dark { @include set-background(#272727);  }
+  .tag.secondary { @include set-background($secondary-color); }
+  .tag.success { @include set-background($success-color); }
+  .tag.danger { @include set-background($danger-color); }
+  .tag.warning { @include set-background($warning-color); }
+  .tag.light { @include set-background($light-color); }
+  .tag.dark { @include set-background($dark-color);  }
   .tag > i, .tag > p { margin: 0.5rem; }
   .tag .close { display: flex; align-items: center; padding: 0.2rem 1rem; border-radius: 3px; align-self: stretch; cursor: pointer; transition: 0.3s ease background-color; }
-    .tag.tag.secondary .close { @include background-hover(#898a8b, #6d6e6f); }
-    .tag.success .close { @include background-hover(#339e66, #287e51); }
-    .tag.danger .close { @include background-hover(#cc5058, #b7484f); }
-    .tag.warning .close { @include background-hover(#ffe26b, #e5cb60); }
-    .tag.light .close { @include background-hover(#c5c6c7, #b1b2b3); }
-    .tag.dark .close { @include background-hover(#272727, #000000); } 
+    .tag.tag.secondary .close { @include background-hover($secondary-color, $secondary-hover-color); }
+    .tag.success .close { @include background-hover($success-color, $success-hover-color); }
+    .tag.danger .close { @include background-hover($danger-color, $danger-hover-color); }
+    .tag.warning .close { @include background-hover($warning-color, $warning-hover-color); }
+    .tag.light .close { @include background-hover($light-color, $light-hover-color); }
+    .tag.dark .close { @include background-hover($dark-color, $dark-hover-color); } 
     .tag .close i { font-size: smaller; }
