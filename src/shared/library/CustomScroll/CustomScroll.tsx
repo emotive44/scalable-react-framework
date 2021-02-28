@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import classes from './CustomScroll.module.css';
+import classes from './CustomScroll.module.scss';
 
 
 interface CustomScrollProps {

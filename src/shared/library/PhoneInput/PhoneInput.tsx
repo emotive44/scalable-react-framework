@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState, useRef } from 'react';
-import classes from './PhoneInput.module.css';
+import classes from './PhoneInput.module.scss';
 
 import { Select, Option } from '../index';
 import Input from '../Input/Input';

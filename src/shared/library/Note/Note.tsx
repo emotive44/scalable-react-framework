@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import classes from './Note.module.css';
+import classes from './Note.module.scss';
 
 
 interface NoteProps {

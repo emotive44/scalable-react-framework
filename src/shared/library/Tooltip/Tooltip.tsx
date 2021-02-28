@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import classes from './Tooltip.module.css';
+import classes from './Tooltip.module.scss';
 
 
 interface TooltipProps {

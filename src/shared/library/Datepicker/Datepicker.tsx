@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import classes from './Datepicker.module.css';
+import classes from './Datepicker.module.scss';
 
 import moment from 'moment';
 

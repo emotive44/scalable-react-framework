@@ -1,5 +1,5 @@
 import React, { FC, useRef, useState } from 'react';
-import classes from './AccordionSection.module.css';
+import classes from './AccordionSection.module.scss';
 
 
 interface AccordionSectionProps {

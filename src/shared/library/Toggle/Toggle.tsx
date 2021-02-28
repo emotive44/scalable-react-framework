@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import classes from './Toggle.module.css';
+import classes from './Toggle.module.scss';
 
 
 interface ToggleProps {

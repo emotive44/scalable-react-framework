@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import classes from './InfoBox.module.css';
+import classes from './InfoBox.module.scss';
 
 interface InfoBoxProps {
   title: string

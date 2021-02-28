@@ -3,15 +3,18 @@
 // Colors Map
 $colors: (
   blue: (
+    lighter: #b2eaf9,
     light: lighten(#04ade5, 5%),
     base: #04ade5,
     dark: #6633cc,
+    darker: #004a5f,
   ),
   red: (
+    lighter: #f2cfcc,
     light: lighten(#cc5058, 5%),
     base: #cc5058,
-    dark: darken(#cc5058, 10%),
-    darker: darken(#cc5058, 30%),
+    dark: red,
+    darker: #720a00,
   ),
   black: (
     light: lighten(#272727, 10%),
@@ -19,14 +22,22 @@ $colors: (
     dark: #000000,
   ),
   green: (
+    lighter: #ccf2cf,
     light: lighten(#339e66, 5%),
     base: #339e66,
     dark: #287e51,
+    darker: #003905,
   ),
   yellow: (
+    lighter: #ffe4b2,
     light: lighten(#ffe26b, 5%),
     base: #ffe26b,
     dark: #e5cb60,
+    darker: #b27300,
+  ),
+  white: (
+    base: #ffffff,
+    dark: whitesmoke,
   ),
   gray: (
     lighter: lightgray,
@@ -40,8 +51,9 @@ $colors: (
 //    UI-Components colors      //
 $info-color: get-color(blue, light);
 $info-hover-color: get-color(blue, base);
+$link-hover-color: get-color(blue, dark);
 $secondary-color: get-color(gray, dark);
-$secondary-hover-color: get-colro(gray, darker);
+$secondary-hover-color: get-color(gray, darker);
 $success-color: get-color(green, base);
 $success-hover-color: get-color(green, dark);
 $danger-color: get-color(red, base);
@@ -52,3 +64,40 @@ $light-color: get-color(gray, light);
 $light-hover-color: get-color(gray, base);
 $dark-color: get-color(black, base);
 $dark-hover-color: get-color(black, dark);
+
+$notify-success-background-color: get-color(green, lighter);
+$notify-success-color: get-color(green, darker);
+$notify-error-background-color: get-color(red, lighter);
+$notify-error-color: get-color(red, darker);
+$notify-info-background-color: get-color(blue, lighter);
+$notify-info-color: get-color(blue, darker);
+$notify-warning-background-color: get-color(yellow, lighter);
+$notify-warning-color: get-color(yellow, darker);
+
+//    main colors       //
+$border-color: get-color(black, base);
+$border-secondary-color: get-color(gray, dark);
+$error-msg-color: get-color(red, dark);
+
+$avatar-placeholder-color: get-color(white);
+$accordion-section-background-color: get-color(gray, lighter);
+$input-icon-background-color: get-color(gray, lighter);
+$scroll-color: get-color(gray, dark);
+$divider-color: get-color(gray, darker);
+$infobox-color: get-color(gray, dark);
+$infobox-background-color: get-color(white);
+$infobox-title-background-color: get-color(gray, lighter);
+$modal-background-color: get-color(gray, lighter);
+$modal-overlay-background-color: get-color(gray, lighter);
+$modal-close-color: get-color(gray, darker);
+$modal-close-hover-color: get-color(black, dark);
+$note-color: get-color(gray);
+$notfound-background-color: get-color(gray, lighter);
+$radio-color: get-color(gray, darker);
+$range-color: get-color(blue);
+$select-icon-color: get-color(gray, dark);
+$select-icon-hover-color: get-color(black, dark);
+$tab-color: get-color(blue, light);
+$toggle-background-color: get-color(gray, light);
+$toggle-color: get-color(white, dark);
+$toggle-hover-background-color: get-color(gray, dark);

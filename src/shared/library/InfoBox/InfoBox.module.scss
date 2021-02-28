@@ -1,0 +1,9 @@
+@import '../../styles/global/colors';
+
+
+.infobox { background-color: $infobox-background-color; border: 1px solid $border-color; padding: 4px; border-radius: 3px; width: 100%; }
+	.infobox .title { background: $infobox-title-background-color; font-size: 1.9rem; font-weight: 700; text-align: center; padding: 8px 4px; border-radius: 3px 3px 0 0; }
+	.infobox .body { width: 100%; display: table; }
+		.infobox .body .cnt { height: 0.5rem; display: table-cell; color: $infobox-color; font-size: 16px; font-weight: bold; text-align: center; vertical-align: middle; word-break: break-word; padding: 4px; }
+		.infobox .body small { display: block; color: $infobox-color; font-size: 12px; font-weight: 300; margin-top: 4px; }
+	.infobox i { color: $infobox-color; font-size: 1.6rem; margin-left: 8px; }

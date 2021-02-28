@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import classes from './Carousel.module.css';
+import classes from './Carousel.module.scss';
 
 
 interface CarouselProps {

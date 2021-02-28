@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import classes from './Notification.module.css';
+import classes from './Notification.module.scss';
 
 import Text from '../Text/Text';
 

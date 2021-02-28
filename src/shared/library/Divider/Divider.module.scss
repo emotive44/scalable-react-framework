@@ -1,0 +1,13 @@
+@import '../../styles/global/colors';
+
+
+.divider { display: flex; align-items: center; flex-direction: row; justify-content: center; align-self: stretch; margin: 0.5rem; }
+  .divider.horizontal { flex-direction: column; }
+  .divider span { margin: 1rem; }
+  .divider small { width: 1.5px; height: 1.5px; flex: 1; }
+  .divider img { width: 100px; height: 100px; border-radius: 50%; border: 3px solid $border-color; }
+  .divider .left { background: linear-gradient(to right, transparent, $divider-color); }
+  .divider.horizontal .left { background: linear-gradient(to bottom, transparent, $divider-color); }
+  .divider .right { background: linear-gradient(to right, $divider-color, transparent); }
+  .divider.horizontal .right { background: linear-gradient(to top, transparent, $divider-color); }
+  

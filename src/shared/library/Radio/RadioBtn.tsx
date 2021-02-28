@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import classes from './RadioBtn.module.css';
+import classes from './RadioBtn.module.scss';
 
 
 interface RadioBtnProps {

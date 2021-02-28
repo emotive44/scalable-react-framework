@@ -1,5 +1,5 @@
 import React, { FC, ReactElement, useEffect, useState } from "react";
-import classes from "./Input.module.css";
+import classes from "./Input.module.scss";
 
 type InputType =
   | "email"

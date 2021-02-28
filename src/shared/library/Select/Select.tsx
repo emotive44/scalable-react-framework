@@ -1,5 +1,5 @@
 import React, { FC, useState, useRef, useEffect, ReactElement, ReactNode } from 'react';
-import classes from './Select.module.css';
+import classes from './Select.module.scss';
 
 import Input from '../Input/Input';
 import SelectOption from './SelectOption';

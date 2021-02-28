@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import classes from './Avatar.module.css';
+import classes from './Avatar.module.scss';
 
 
 type Letter = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'G' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z';

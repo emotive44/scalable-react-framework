@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import classes from './NotFound.module.css';
+import classes from './NotFound.module.scss';
 
 
 interface NotFoundProps {

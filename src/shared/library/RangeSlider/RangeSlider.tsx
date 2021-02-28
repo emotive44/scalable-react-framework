@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef } from 'react';
-import classes from './RangeSlider.module.css';
+import classes from './RangeSlider.module.scss';
 
 
 interface RangeSliderProps {

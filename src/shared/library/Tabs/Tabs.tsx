@@ -1,6 +1,6 @@
 import React, { FC, ReactElement, useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import classes from './Tabs.module.css';
+import classes from './Tabs.module.scss';
 
 
 interface IChildProps {

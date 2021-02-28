@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import classes from './Divider.module.css';
+import classes from './Divider.module.scss';
 
 interface DividerProps {
   title           ?: string,

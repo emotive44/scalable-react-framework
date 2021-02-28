@@ -1,4 +1,6 @@
-.date-picker { display: flex; height: 35px; min-width: 13rem; border: 1px solid black; border-radius: 2px; }
+@import '../../styles/global/colors';
+
+.date-picker { display: flex; height: 35px; min-width: 13rem; border: 1px solid $border-color; border-radius: 2px; }
   .date-picker .input-wrapper { width: 100%; position: relative; }
     .date-picker .input-wrapper .value { display: inline-block; margin: 0.7rem; }
     .date-picker .input-wrapper .input { position: absolute; right: 0; top: -5px; width: 100%; height: 43px; cursor: pointer; opacity: 0; z-index: 1; box-sizing: border-box; }

@@ -1,7 +1,11 @@
+@import '../../styles/global/colors';
+@import '../../styles/global/functions';
+
+
 .tooltip { display: flex; align-items: center; width: 100%; }
   .tooltip .children { cursor: help; position: relative; width: 30rem; }
-  .tooltip i { color: gray; font-size: 1.3rem; }
-    .tooltip:hover i { color: blue; }
+  .tooltip i { color: get-color(gray, dark); font-size: 1.3rem; }
+    .tooltip:hover i { color: get-color(blue, dark); }
   .tooltip.position-top .message { min-width: 7rem; max-width: 40rem; opacity: 0; visibility: hidden; font-size: 1.2rem; background: white; font-weight: 300; padding: 10px; position: absolute; top: 0; z-index: 10; border-radius: 3px; transform: translateY(-100%); box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4); transition: ease-in 0.2s; transition-property: opacity top; }
     .tooltip.position-top .message::after { content: " "; border: solid transparent; border-width: 8px; border-color: rgba(255, 255, 255, 0); border-top-color: #fff; margin-left: -20px; position: absolute; top: 100%; left: 38px; pointer-events: none; }
     .tooltip.position-top:hover .message { opacity: 1; visibility: visible; top: -12px; }

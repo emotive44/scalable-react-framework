@@ -1,5 +1,5 @@
 import React, { FC, ReactElement, useState } from 'react';
-import classes from './Modal.module.css';
+import classes from './Modal.module.scss';
 
 import Text from '../Text/Text';
 import CustomScroll from '../CustomScroll/CustomScroll';

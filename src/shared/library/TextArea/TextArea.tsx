@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import classes from './TextArea.module.css';
+import classes from './TextArea.module.scss';
 
 
 interface TextAreaProps {

@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import classes from './CheckBox.module.css';
+import classes from './CheckBox.module.scss';
 
 interface CheckBoxProps { 
   callbackChange  : React.ChangeEventHandler<HTMLInputElement>;

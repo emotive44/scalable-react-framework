@@ -1,0 +1,17 @@
+@import '../../styles/global/colors';
+
+
+.modal { display: flex; flex-direction: column; position: fixed; top: 18%; left: 50%; z-index: 30; opacity: 1; visibility: visible; min-width: 45rem; max-width: 60%; min-height: 15rem; border: 1px solid $border-secondary-color; background: $modal-background-color; border-radius: 7px; transform: translateX(-50%); transition: 1s ease-in-out; transition-property: opacity visibility; }
+  .modal .header { display: flex; font-size: 18px; text-align: center; align-items: center; justify-content: space-between; border-bottom: 1px solid $border-secondary-color; padding: 1rem 0.5rem; }
+  .modal .header .header-wrapper { flex: 1 1 90%; }
+  .modal .header .close i { font-size: 30px; color: $modal-close-color; margin-left: 0.5rem; cursor: pointer; transition: 0.2s ease-in-out color; }
+    .modal .header .close i:hover { color: $modal-close-hover-color; }
+  .modal .main { flex: 1 0 50%; padding: 1rem 2rem; min-height: 10rem; max-height: 35rem; margin-right: 0.2rem; }
+  .modal .footer { border-top: 1px solid $border-secondary-color; padding: 1rem 0.5rem; }
+  .overlay { background: $modal-overlay-background-color; opacity: 0.7; visibility: visible; position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 29; transition: 1s ease-in-out; transition-property: opacity visibility; }
+  .modal.closed { opacity: 0; visibility: hidden; }
+    .modal.closed + .overlay { opacity: 0; visibility: hidden; }
+
+@media (max-width: 800px) {
+  .modal { min-width: 95%; top: 5%; }
+}
