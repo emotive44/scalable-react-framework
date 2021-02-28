@@ -1,1 +1,54 @@
-$primary-color: gray;
+@import 'functions';
+
+// Colors Map
+$colors: (
+  blue: (
+    light: lighten(#04ade5, 5%),
+    base: #04ade5,
+    dark: #6633cc,
+  ),
+  red: (
+    light: lighten(#cc5058, 5%),
+    base: #cc5058,
+    dark: darken(#cc5058, 10%),
+    darker: darken(#cc5058, 30%),
+  ),
+  black: (
+    light: lighten(#272727, 10%),
+    base: #272727,
+    dark: #000000,
+  ),
+  green: (
+    light: lighten(#339e66, 5%),
+    base: #339e66,
+    dark: #287e51,
+  ),
+  yellow: (
+    light: lighten(#ffe26b, 5%),
+    base: #ffe26b,
+    dark: #e5cb60,
+  ),
+  gray: (
+    lighter: lightgray,
+    light: #c5c6c7,
+    base: #b1b2b3,
+    dark: #898a8b,
+    darker: #6d6e6f,
+  )
+);
+
+//    UI-Components colors      //
+$info-color: get-color(blue, light);
+$info-hover-color: get-color(blue, base);
+$secondary-color: get-color(gray, dark);
+$secondary-hover-color: get-colro(gray, darker);
+$success-color: get-color(green, base);
+$success-hover-color: get-color(green, dark);
+$danger-color: get-color(red, base);
+$danger-hover-color: get-color(red, dark);
+$warning-color: get-color(yellow, base);
+$warning-hover-color: get-color(yellow, dark);
+$light-color: get-color(gray, light);
+$light-hover-color: get-color(gray, base);
+$dark-color: get-color(black, base);
+$dark-hover-color: get-color(black, dark);
