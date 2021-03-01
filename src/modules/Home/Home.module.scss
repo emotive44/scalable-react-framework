@@ -5,3 +5,12 @@
     color: red;
   }
 }
+
+.enter { transform: translateX(-30rem); }
+.enter-active { transform: translateX(0); transition: 0.5s ease transform; }
+.exit-active { transform: translateX(100%); transition: 0.5s ease transform; }
+
+
+.enter-fade { opacity: 0; }
+.enter-active-fade { opacity: 1; transition: 1s ease opacity; }
+.exit-active-fade { opacity: 0; transition: 1s ease opacity; }

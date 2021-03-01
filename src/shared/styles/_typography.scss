@@ -4,6 +4,8 @@ html {
   body {
     font-size: 1.6rem;
 
+    #root { min-height: 100vh; }
+
     p { text-align: justify; }
 
     h1 { font-weight: 900; font-size: 3.3rem; line-height: 1; letter-spacing: 4.5px; margin: 0.8rem 0;   }
