@@ -4,7 +4,7 @@
 
 .carousel {  width: 100%; height: 100%; overflow: hidden; display: flex; border: 1px solid $border-color; border-radius: 7px; }
   .carousel .arrow { display: flex; align-items: center; justify-content: center; width: 5rem; opacity: 1; cursor: pointer; background: get-color(white, dark); transition: 0.3s ease-in-out opacity; }
-    .carousel .arrow i { border-radius: 50%; padding: 0.7rem; background-color: get-color(white, dark); transition: 0.5s ease-in-out; transition-property: color background-color; }
+    .carousel .arrow i { border-radius: 50%; padding: 0.7rem; background-color: get-color(white, dark); transition: 0.3s ease-in-out; transition-property: color background-color; }
     .carousel .arrow:hover { opacity: 0.6; }
     .carousel .arrow:hover > i { background-color: get-color(gray, dark); color: get-color(white, dark); }
   .carousel .main { flex: 1; margin: 0.5rem 1.5rem; width: 80%; }
