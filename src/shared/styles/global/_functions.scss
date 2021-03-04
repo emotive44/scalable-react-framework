@@ -1,3 +1,7 @@
+@import 'colors.scss';
+@import 'theme.scss';
+
+
 @function set-text-color($color) {
   @if(lightness($color) > 60) {
     @return black;
@@ -24,4 +28,13 @@
   } 
   // else do nothing
   @return null;
+}
+
+@function get-theme-color($key, $base: null) {
+  @if($base) {
+    @return map-get(map-get($theme, $base), $key);
+  }
+  @else {
+    @return map-get($theme-map, $key);
+  }
 }

@@ -1,19 +1,14 @@
 @import 'reset.scss';
 @import 'typography.scss';
+@import './global';
 
 
 html {
+  background-color: get-theme-color('body-color', 'default');
+  color: get-theme-color('primary-text-color', 'default');
+
   &.theme--dark {
-    color: #3D3D3D;
-    background-color: white;
-    filter: contrast(90%) invert(90%) hue-rotate(180deg);
-
-    *[style^='background-image: url'], img, button {
-      filter: invert(100%) hue-rotate(-180deg);
-    }
-
-    img[src$='.gif'] { 
-      filter: contrast(40%); 
-    }
+    background-color: get-theme-color('body-color', 'dark');
+    color: get-theme-color('primary-text-color', 'dark');
   }
 }

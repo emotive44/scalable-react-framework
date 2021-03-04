@@ -1,0 +1,28 @@
+$theme: (
+  default: (
+    body-color: get-color(white, dark),
+    accent-color: get-color(gray),
+    depth-color: get-color(gray, darker),
+    primary-text-color: get-color(black, darker),
+    secondary-text-color: get-color(gray),
+    white-text-color: get-color(white),
+    primary-icon-color: get-color(black, dark),
+    secondary-icon-color: get-color(gray),
+    link-color: get-color(black),
+    primary-border-color: get-color(black, dark),
+    secondary-border-color: get-color(gray, dark),
+  ),
+  dark: (
+    body-color: get-color(black, base),
+    accent-color: get-color(black, lighter),
+    depth-color: get-color(black, darker),
+    primary-text-color: get-color(white, dark),
+    secondary-text-color: get-color(gray),
+    white-text-color: get-color(white),
+    primary-icon-color: get-color(white, dark),
+    secondary-icon-color: get-color(gray, dark),
+    link-color: get-color(blue, dark),
+    primary-border-color: get-color(gray, darker),
+    secondary-border-color: get-color(black, lighter),
+  ),
+);

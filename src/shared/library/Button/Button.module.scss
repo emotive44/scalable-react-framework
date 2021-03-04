@@ -1,5 +1,6 @@
 @import '../../styles/global/mixins';
 @import '../styles.scss';
+@import '../../styles/global/functions';
 
 
 .link { display: inline-flex; align-items: flex-end; min-width: 10rem; font-size: 1.6rem; cursor: pointer; }

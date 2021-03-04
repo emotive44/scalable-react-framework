@@ -1,52 +1,5 @@
-@import '../styles/global/functions';
+@import '../styles/global';
 
-// Colors Map
-$colors: (
-  blue: (
-    lighter: #b2eaf9,
-    light: lighten(#04ade5, 5%),
-    base: #04ade5,
-    dark: #6633cc,
-    darker: #004a5f,
-  ),
-  red: (
-    lighter: #f2cfcc,
-    light: lighten(#cc5058, 5%),
-    base: #cc5058,
-    dark: #961003,
-    darker: #720a00,
-  ),
-  black: (
-    light: lighten(#272727, 10%),
-    base: #272727,
-    dark: #000000,
-  ),
-  green: (
-    lighter: #ccf2cf,
-    light: lighten(#339e66, 5%),
-    base: #339e66,
-    dark: #287e51,
-    darker: #003905,
-  ),
-  yellow: (
-    lighter: #ffe4b2,
-    light: lighten(#ffe26b, 5%),
-    base: #ffe26b,
-    dark: #e5cb60,
-    darker: #b27300,
-  ),
-  white: (
-    base: #ffffff,
-    dark: whitesmoke,
-  ),
-  gray: (
-    lighter: lightgray,
-    light: #c5c6c7,
-    base: #b1b2b3,
-    dark: #898a8b,
-    darker: #6d6e6f,
-  )
-);
 
 //    main colors       //
 $border-color: get-color(black, base);
@@ -67,8 +20,8 @@ $warning-color: get-color(yellow, base);
 $warning-hover-color: get-color(yellow, dark);
 $light-color: get-color(gray, light);
 $light-hover-color: get-color(gray, base);
-$dark-color: get-color(black, base);
-$dark-hover-color: get-color(black, dark);
+$dark-color: get-color(black, lighter);
+$dark-hover-color: get-color(black, darker);
 
 $notify-success-background-color: get-color(green, lighter);
 $notify-success-color: get-color(green, darker);
