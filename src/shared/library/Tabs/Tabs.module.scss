@@ -6,20 +6,20 @@
   .container.bottom { flex-direction: column-reverse; }
   .container.left { flex-direction: row; }
   .container.right { flex-direction: row-reverse; }
-  .container .tabs { display: flex; justify-content: space-around; border: 1.3px solid $border-secondary-color; border-radius: 5px; border-bottom: 1.5px solid $border-secondary-color; }
+  .container .tabs { @include theme($theme) { border: 1.3px solid get-theme-color('primary-border-color'); border-bottom: 1.5px solid get-theme-color('secondary-border-color'); }; display: flex; justify-content: space-around; border-radius: 5px; }
   .container.left .tabs,
   .container.right .tabs { flex-direction: column; }
-    .container .tabs .tab-link { display: flex; align-items: center; justify-content: center; min-width: 15%; min-height: 20%; padding: 0.5rem; border: 3px solid transparent; transition: 0.2s ease-in-out; transition-property: color background; }
+    .container .tabs .tab-link { @include theme($theme) { color: get-theme-color('primary-text-color'); }; display: flex; align-items: center; justify-content: center; min-width: 15%; min-height: 20%; padding: 0.5rem; border: 3px solid transparent; transition: 0.3s ease-in-out; transition-property: color background-color; }
     .container.bottom .tabs .tab-link { border-top: 3px solid transparent; }
     .container.top .tabs .tab-link { border-bottom: 3px solid transparent; }
     .container.left .tabs .tab-link,
     .container.right .tabs .tab-link { justify-content: flex-start; }
-      .container .tabs .tab-link:hover { color: $tab-color; background: whitesmoke; }
+      .container .tabs .tab-link:hover { @include theme($theme) { background-color: get-theme-color('accent-color'); }; color: $info-color; }
       .container .tabs .tab-link p { min-width: 4rem; margin-bottom: 0.3rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; align-self: flex-end; }
-    .container.top .tabs .tab-link.active-tab { border-bottom: 3px solid $tab-color; color: $tab-color; transition: border-bottom 0.5s ease-in-out; }
-    .container.bottom .tabs .tab-link.active-tab { border-top: 3px solid $tab-color; color: $tab-color; transition: border-top 0.5s ease-in-out; }
-    .container.left .tabs .tab-link.active-tab { border-right: 3px solid $tab-color; color: $tab-color; transition: border-right 0.5s ease-in-out; }
-    .container.right .tabs .tab-link.active-tab { border-left: 3px solid $tab-color; color: $tab-color; transition: border-left 0.5s ease-in-out; }
+    .container.top .tabs .tab-link.active-tab { border-bottom: 3px solid $info-color; color: $info-color; transition: border-bottom 0.5s ease-in-out; }
+    .container.bottom .tabs .tab-link.active-tab { border-top: 3px solid $info-color; color: $info-color; transition: border-top 0.5s ease-in-out; }
+    .container.left .tabs .tab-link.active-tab { border-right: 3px solid $info-color; color: $info-color; transition: border-right 0.5s ease-in-out; }
+    .container.right .tabs .tab-link.active-tab { border-left: 3px solid $info-color; color: $info-color; transition: border-left 0.5s ease-in-out; }
   .container .content { padding: 0.5rem; border: 1px solid gray; border-radius: 6px; overflow: hidden; }
   .container.top .content { margin-top: 1.5rem; }
   .container.bottom .content { margin-bottom: 1.5rem; }

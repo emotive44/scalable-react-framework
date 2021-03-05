@@ -1,11 +1,6 @@
 @import '../styles/global';
 
 
-//    main colors       //
-$border-color: get-color(black, base);
-$border-secondary-color: get-color(gray, dark);
-$error-msg-color: get-color(red, dark);
-
 //    UI-Components colors      //
 $info-color: get-color(blue, light);
 $info-hover-color: get-color(blue, base);
@@ -31,26 +26,3 @@ $notify-info-background-color: get-color(blue, lighter);
 $notify-info-color: get-color(blue, darker);
 $notify-warning-background-color: get-color(yellow, lighter);
 $notify-warning-color: get-color(yellow, darker);
-
-$avatar-placeholder-color: get-color(white);
-$accordion-section-background-color: get-color(gray, lighter);
-$input-icon-background-color: get-color(gray, lighter);
-$scroll-color: get-color(gray, dark);
-$divider-color: get-color(gray, darker);
-$infobox-color: get-color(gray, dark);
-$infobox-background-color: get-color(white);
-$infobox-title-background-color: get-color(gray, lighter);
-$modal-background-color: get-color(gray, lighter);
-$modal-overlay-background-color: get-color(gray, lighter);
-$modal-close-color: get-color(gray, darker);
-$modal-close-hover-color: get-color(black, dark);
-$note-color: get-color(gray);
-$notfound-background-color: get-color(gray, lighter);
-$radio-color: get-color(gray, darker);
-$range-color: get-color(blue);
-$select-icon-color: get-color(gray, dark);
-$select-icon-hover-color: get-color(black, dark);
-$tab-color: get-color(blue, light);
-$toggle-background-color: get-color(gray, light);
-$toggle-color: get-color(white, dark);
-$toggle-hover-background-color: get-color(gray, dark);

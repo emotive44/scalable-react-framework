@@ -1,10 +1,8 @@
 @import '../styles.scss';
-@import '../../styles/global/mixins';
-@import '../../styles/global/functions';
 
 
-.option { @include background-hover(get-color(white), get-color(gray, lighter)); display: flex; padding: 0.5rem; align-items: center; border-bottom: 1px solid $border-color; cursor: pointer; transition: 0.3s ease background-color; }
-  .option.checked-option { background-color: get-color(gray, lighter); }
+.option { @include theme($theme) { @include background-hover(get-theme-color('body-color'), get-theme-color('accent-color')); border-bottom: 1px solid get-theme-color('primary-border-color'); }; display: flex; padding: 0.5rem; align-items: center; cursor: pointer; transition: 0.3s ease background-color; }
+  .option.checked-option { @include theme($theme) { background-color: get-theme-color('accent-color'); }; }
   .option:last-child { border-bottom: none; padding-bottom: 7px; }
   .option .content { display: flex; flex: 1; align-items: center; }
     .option .content i { margin-right: 1rem; }

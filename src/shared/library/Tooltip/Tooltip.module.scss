@@ -1,23 +1,26 @@
 @import '../styles.scss';
-@import '../../styles/global/functions';
 
+
+.triangle { content: ""; position: absolute; @include theme($theme) { border-top-color: get-theme-color('body-color'); }; border: solid transparent; border-width: 8px; margin-left: -20px; pointer-events: none; }
+.show-message { opacity: 1; visibility: visible; }
 
 .tooltip { display: flex; align-items: center; width: 100%; }
   .tooltip .children { cursor: help; position: relative; width: 30rem; }
-  .tooltip i { color: get-color(gray, dark); font-size: 1.3rem; }
-    .tooltip:hover i { color: get-color(blue, dark); }
-  .tooltip.position-top .message { min-width: 7rem; max-width: 40rem; opacity: 0; visibility: hidden; font-size: 1.2rem; background: white; font-weight: 300; padding: 10px; position: absolute; top: 0; z-index: 10; border-radius: 3px; transform: translateY(-100%); box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4); transition: ease-in 0.2s; transition-property: opacity top; }
-    .tooltip.position-top .message::after { content: " "; border: solid transparent; border-width: 8px; border-color: rgba(255, 255, 255, 0); border-top-color: #fff; margin-left: -20px; position: absolute; top: 100%; left: 38px; pointer-events: none; }
-    .tooltip.position-top:hover .message { opacity: 1; visibility: visible; top: -12px; }
+  .tooltip i { @include theme($theme) { color: get-theme-color('secondary-icon-color'); }; font-size: 1.3rem; }
+    .tooltip:hover i {  @include theme($theme) { color: get-theme-color('primary-icon-color'); }; }
+  .tooltip .message { @include theme($theme) { background-color: get-theme-color('body-color'); box-shadow: 0 0 15px 0 get-theme-color('shadow-color'); }; opacity: 0; visibility: hidden; padding: 10px; position: absolute; font-size: 1.2rem; font-weight: 300; z-index: 10; border-radius: 3px; }
+  .tooltip.position-top .message { min-width: 7rem; max-width: 40rem; top: 0; z-index: 10; transform: translateY(-100%); transition: ease-in 0.2s; transition-property: opacity top; }
+    .tooltip.position-top .message::after { @extend .triangle; top: 99%; left: 38px; }
+    .tooltip.position-top:hover .message { @extend .show-message; top: -12px; }
   .tooltip.position-bottom .children { width: 100%; padding-bottom: 1rem; }
-  .tooltip.position-bottom .message { min-width: 7rem; max-width: 40rem; opacity: 0; visibility: hidden; font-size: 1.2rem; background: white; font-weight: 300; padding: 10px; position: absolute; bottom: -60px; z-index: 10; border-radius: 3px; transform: translateY(-100%); box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4); transition: ease-in 0.2s; transition-property: opacity bottom; }
-    .tooltip.position-bottom .message::after { content: " "; border: solid transparent; border-width: 8px; border-color: rgba(255, 255, 255, 0); border-top-color: #fff; margin-left: -20px; position: absolute; top: -42%; left: 38px; pointer-events: none; transform: rotate(180deg); }
-    .tooltip.position-bottom:hover .message { opacity: 1; visibility: visible; bottom: -75px; }
+  .tooltip.position-bottom .message { min-width: 7rem; max-width: 40rem; bottom: -60px; transform: translateY(-100%);transition: ease-in 0.2s; transition-property: opacity bottom; }
+    .tooltip.position-bottom .message::after { @extend .triangle; top: -42%; left: 38px; transform: rotate(180deg); }
+    .tooltip.position-bottom:hover .message { @extend .show-message; bottom: -70px; }
   .tooltip.position-right .children { width: 100%; padding-right: 1.6rem; }
-  .tooltip.position-right .message { width: max-content; max-width: 40rem; opacity: 0; visibility: hidden; text-align: left; font-size: 1.2rem; background: white; font-weight: 300; padding: 10px; position: absolute; top: 29px; z-index: 10; border-radius: 3px; transform: translateY(-100%); box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4); transition: ease-in 0.2s; transition-property: opacity left; }
-    .tooltip.position-right .message::before { content: " "; border: solid transparent; border-width: 8px; border-color: rgba(255, 255, 255, 0); border-top-color: #fff; margin-left: -20px; position: absolute; bottom: 8px; left: 4px; pointer-events: none; transform: rotate(90deg); }
-    .tooltip.position-right:hover .message { opacity: 1; visibility: visible; }
+  .tooltip.position-right .message { width: max-content; max-width: 40rem; text-align: left; top: 29px; transform: translateY(-100%); transition: ease-in 0.2s; transition-property: opacity left; }
+    .tooltip.position-right .message::before { @extend .triangle; bottom: 8px; left: 4px; transform: rotate(90deg); }
+    .tooltip.position-right:hover .message { @extend .show-message; }
   .tooltip.position-left .children { width: 100%; padding-left: 1.6rem; }
-  .tooltip.position-left .message { width: max-content; max-width: 40rem; opacity: 0; visibility: hidden; text-align: left; font-size: 1.2rem; background: white; font-weight: 300; padding: 10px; position: absolute; top: 29px; z-index: 10; border-radius: 3px; transform: translateY(-100%); box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4); transition: ease-in 0.2s; transition-property: opacity right; }
-    .tooltip.position-left .message::before { content: " "; border: solid transparent; border-width: 8px; border-color: rgba(255, 255, 255, 0); border-top-color: #fff; margin-left: -20px; position: absolute; bottom: 8px; right: -16px; pointer-events: none; transform: rotate(270deg); }
-    .tooltip.position-left:hover .message { opacity: 1; visibility: visible; }
+  .tooltip.position-left .message { width: max-content; max-width: 40rem; text-align: left; top: 29px; transform: translateY(-100%); transition: ease-in 0.2s; transition-property: opacity right; }
+    .tooltip.position-left .message::before { @extend .triangle; bottom: 8px; right: -16px; transform: rotate(270deg); }
+    .tooltip.position-left:hover .message { @extend .show-message; }

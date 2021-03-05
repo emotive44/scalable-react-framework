@@ -4,7 +4,7 @@ $colors: (
     light: lighten(#04ade5, 5%),
     base: #04ade5,
     dark: #6633cc,
-    darker: #004a5f,
+    darker: darken(#6633cc, 5%),
   ),
   red: (
     lighter: #f2cfcc,
@@ -14,7 +14,7 @@ $colors: (
     darker: #720a00,
   ),
   black: (
-    lighter: lighten(#272727, 4%),
+    lighter: lighten(#272727, 10%),
     light: #272727,
     base: #1f2225,
     dark: #151f29,
@@ -37,6 +37,7 @@ $colors: (
   white: (
     base: #ffffff,
     dark: whitesmoke,
+    darker: darken(whitesmoke, 10%),
   ),
   gray: (
     lighter: lightgray,
