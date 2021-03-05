@@ -1,5 +1,8 @@
+@import './global/variables';
+
+
 html {
-  font-size: 10px; font-family: 'Open Sans', sans-serif;
+  font-size: $html-font-size; font-family: $sans-serif;
 
   body {
     font-size: 1.6rem;
@@ -17,15 +20,6 @@ html {
   }
 }
 
-// font-family utility classes
-.serif {
-  font-family: Georgia, 'Times New Roman', Times, serif !important;
-}
-
-.mono {
-  font-family: monospace !important;
-}
-
 @supports (-moz-appearance:none) {
-  html { font-size: 11px; }
+  html { font-size: $firefox-html-font-size; }
 }
