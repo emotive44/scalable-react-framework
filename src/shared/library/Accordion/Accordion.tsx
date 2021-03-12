@@ -43,7 +43,7 @@ const Accordion: FC<AccordionProps> = ({
         [title]: false,
       }));
     })
-  }, [children]);
+  }, []);
 
   const accordionClasses: string[] = [];
   if (className) {
