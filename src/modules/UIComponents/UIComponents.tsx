@@ -630,14 +630,14 @@ const UIComponents:FC = () => {
 
       <div style={{ width: '90%', margin: '10rem auto', height: '45rem' }}>
         <Carousel 
-          imgData={arrayWithImgs} 
+          imgsData={arrayWithImgs} 
           // clickImgChange
           withFooter
         />
       </div>
 
       <div style={{ width: '90%', margin: '0 auto' }}>
-        <ImageGallery imgData={arrayWithImgs} />
+        <ImageGallery imgsData={arrayWithImgs} />
       </div>
 
       <Button fullWidth>

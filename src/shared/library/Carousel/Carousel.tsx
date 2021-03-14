@@ -1,34 +1,22 @@
 import React, { FC, useState } from 'react';
 import classes from './Carousel.module.scss';
+import useImageOrientation from '../../hooks/useImageOrientation';
 
 
 interface CarouselProps {
-  imgData           : string[],  // array with img urls
+  imgsData           : string[],  // array with img urls
   clickImgChange    ?: boolean,  // if you want to slide by click image
   withFooter        ?: boolean, // if want to show footer with small images navigation
 }
 
 const Carousel: FC<CarouselProps> = ({
-  imgData,
+  imgsData,
   withFooter,
   clickImgChange,
 }) => {
+  // get array with image orientation classes depend by imgData
+  const { imgOrientationClasses } = useImageOrientation(imgsData, classes);
   const [imgIndx, setImgIndx] = useState(1);
-
-  // adding additional styles for landscape and portrait image
-  const imageOrientation = (src: string) => {
-    const img = new Image();
-    img.src = src;
-
-    const width = img.width;
-    const height = img.height;
-    
-    if(width > height) { 
-      return classes.landscape; 
-    } else {
-      return classes.portrait;
-    } 
-  } 
 
   const getPreviousImg = () => {
     // check, because we want to show minimum 2 images
@@ -41,7 +29,7 @@ const Carousel: FC<CarouselProps> = ({
 
   const getNextImg = () => {
     // check, because we want to show minimum 2 images
-    if(imgIndx === imgData.length - 1) {
+    if(imgIndx === imgsData.length - 1) {
       return;
     }
 
@@ -49,9 +37,9 @@ const Carousel: FC<CarouselProps> = ({
   }
 
   // current images, which user see
-  let imagesContent = imgData.map((img, i) => {
+  let imagesContent = imgsData.map((img, i) => {
     const imageClasses = [classes.img];
-    imageClasses.push(imageOrientation(img));
+    imageClasses.push(imgOrientationClasses[i]);
 
     if(i === imgIndx) {
       imageClasses.push(classes.current);
@@ -94,7 +82,7 @@ const Carousel: FC<CarouselProps> = ({
   if(withFooter) {
     imagesClasses.push(classes['with-footer']);
 
-    footerContent = imgData.map((img, i) => {
+    footerContent = imgsData.map((img, i) => {
       const styles = {
         backgroundImage: `url(${img})`,
         opacity: `${imgIndx === i ? '1' : '0.6'}` // to show current image
