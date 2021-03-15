@@ -59,3 +59,18 @@
     }
   }
 }
+
+@mixin fade($type, $duration: 0.5, $opacity: 1) {
+  @if ($type == 'hide') {
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-in-out #{$duration}s;
+    transition-property: visibility opacity;
+  }
+  @else if ($type == 'show') {
+    opacity: $opacity;
+    visibility: visible;
+    transition: ease-in #{$duration}s;
+    transition-property: visibility opacity;
+  }
+}

@@ -1,15 +1,15 @@
 @import '../styles.scss';
 
 
-.notification { display: flex; justify-content: space-between; min-width: 20rem; width: 30%; z-index: 19; opacity: 0; position: fixed; padding: 1rem; font-size: 1.4rem; border-radius: 0.3em; transition: ease-in-out transform 1.5s, opacity 2s; }
+.notification { @include fade('hide', 1.5); display: flex; justify-content: space-between; min-width: 20rem; width: 30%; z-index: 19; position: fixed; padding: 1rem; font-size: 1.4rem; border-radius: 0.3em; transition: ease-in-out transform 1.5s; }
   .notification.bottom-left { bottom: 7rem; left: 4rem; }
   .notification.bottom-right { bottom: 7rem; right: 4rem; }
   .notification.top-right { top: 7rem; right: 4rem; }
   .notification.top-left { top: 7rem; left: 4rem; }
   .notification.bottom-left.closed,
-  .notification.top-left.closed { opacity: 0;  transform: translateX(-100vw); }
+  .notification.top-left.closed { @include fade('hide', 1.5); transform: translateX(-100vw); }
   .notification.bottom-right.closed,
-  .notification.top-right.closed { opacity: 0;  transform: translateX(100vw); }
+  .notification.top-right.closed { @include fade('hide', 1.5); transform: translateX(100vw); }
   .notification.success { background-color: $notify-success-background-color; color: $notify-success-color; }
   .notification.error { background-color: $notify-error-background-color; color: $notify-error-color; }
   .notification.info { background-color: $notify-info-background-color; color: $notify-info-color; }
@@ -20,7 +20,7 @@
       .notification .content .title .title-text { display: flex; align-items: center; }
   .notification .close { display: flex; align-items: center; }
     .notification .close i { cursor: pointer; font-size: 30px; }
-  .notification.show { opacity: 1; transform: translateX(0); }
+  .notification.show { @include fade('show', 1.5); transform: translateX(0); }
 
 
 @include break-points('tablet') {

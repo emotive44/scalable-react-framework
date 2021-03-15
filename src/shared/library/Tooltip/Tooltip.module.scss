@@ -2,18 +2,18 @@
 
 
 .triangle { content: ""; position: absolute; @include theme($theme) { border-top-color: get-theme-color('body-color'); }; border: solid transparent; border-width: 8px; margin-left: -20px; pointer-events: none; }
-.show-message { opacity: 1; visibility: visible; }
+.show-message { @include fade('show', 0.3); }
 
 .tooltip { display: flex; align-items: center; width: 100%; }
   .tooltip .children { cursor: help; position: relative; width: 30rem; }
   .tooltip i { @include theme($theme) { color: get-theme-color('secondary-icon-color'); }; font-size: 1.3rem; }
     .tooltip:hover i {  @include theme($theme) { color: get-theme-color('primary-icon-color'); }; }
-  .tooltip .message { @include theme($theme) { background-color: get-theme-color('body-color'); box-shadow: 0 0 15px 0 get-theme-color('shadow-color'); }; opacity: 0; visibility: hidden; padding: 10px; position: absolute; font-size: 1.2rem; font-weight: 300; z-index: 10; border-radius: 3px; }
+  .tooltip .message { @include theme($theme) { background-color: get-theme-color('body-color'); box-shadow: 0 0 15px 0 get-theme-color('shadow-color'); }; @include fade('hide');  padding: 10px; position: absolute; font-size: 1.2rem; font-weight: 300; z-index: 10; border-radius: 3px; }
   .tooltip.position-top .message { min-width: 7rem; max-width: 40rem; top: 0; z-index: 10; transform: translateY(-100%); transition: ease-in 0.2s; transition-property: opacity top; }
     .tooltip.position-top .message::after { @extend .triangle; top: 99%; left: 38px; }
     .tooltip.position-top:hover .message { @extend .show-message; top: -12px; }
   .tooltip.position-bottom .children { width: 100%; padding-bottom: 1rem; }
-  .tooltip.position-bottom .message { min-width: 7rem; max-width: 40rem; bottom: -60px; transform: translateY(-100%);transition: ease-in 0.2s; transition-property: opacity bottom; }
+  .tooltip.position-bottom .message { min-width: 7rem; max-width: 40rem; bottom: -60px; transform: translateY(-100%); transition: ease-in 0.2s; transition-property: opacity bottom; }
     .tooltip.position-bottom .message::after { @extend .triangle; top: -42%; left: 38px; transform: rotate(180deg); }
     .tooltip.position-bottom:hover .message { @extend .show-message; bottom: -70px; }
   .tooltip.position-right .children { width: 100%; padding-right: 1.6rem; }
