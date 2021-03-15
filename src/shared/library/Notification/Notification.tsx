@@ -14,12 +14,14 @@ interface NotificationProps {
   secondsDelay    ?: number,
   className       ?: string,
   autoClose       ?: boolean,
+  isShow          ?: boolean,
   position        :  TPosition,
 }
 
 const Notification: FC<NotificationProps> = ({
   type,
   title,
+  isShow,
   message,
   position,
   autoClose,
@@ -47,18 +49,31 @@ const Notification: FC<NotificationProps> = ({
       break;
   }
 
-  let timeOut: number = 2000;
+  let timeOut: number = 4000;
   if(secondsDelay) {
     timeOut = secondsDelay * 1000;
   }
 
   useEffect(() => {
+    // show and hide notification with transition effect
+    if(isShow) {
+      setNotificationClasses(prev => ([
+        ...prev.filter(cl => cl !== classes.closed),
+        classes.show,
+      ]));
+    } else {
+      setNotificationClasses(prev => ([
+        ...prev.filter(cl => cl !== classes.show),
+        classes.closed,
+      ]));
+    }
+
     if(autoClose) {
       setTimeout(() => {
         closeNotification();  
       }, timeOut);
     }
-  }, [autoClose, timeOut]);
+  }, [autoClose, timeOut, isShow]);
 
   const closeNotification = () => {
    setNotificationClasses(prev => ([
@@ -72,15 +87,16 @@ const Notification: FC<NotificationProps> = ({
       <div className={classes.content} >
         <div className={classes.title}>
           <i className={['fas', iconClass].join(' ')} />
-          <Text 
-            fontSize        = {18}
-            fontWeight      = "800"
+          <Text
+            className       = {classes['title-text']}
+            fontSize        = {16}
+            fontWeight      = "700"
             textTransform   = "uppercase" 
           >
             {title}
           </Text>
         </div>
-        <Text textIndent={10}> {message} </Text>
+        <Text textIndent={10} fontSize={15} > {message} </Text>
       </div>
       <span 
         className           = {classes.close}

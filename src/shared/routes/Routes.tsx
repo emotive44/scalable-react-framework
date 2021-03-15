@@ -2,8 +2,8 @@ import React, { FC, lazy, Suspense, CSSProperties } from 'react';
 import { Route, Router, Switch, useHistory } from 'react-router-dom';
 
 import PrivateRoute from './PrivateRoute';
-import useNetworkStatus from '../hooks/useNetworkStatus';
 import { Notification } from '../library';
+import useNetworkStatus from '../hooks/useNetworkStatus';
 
 import Navbar from '../components/Navbar/Navbar';
 const Home = lazy(() => import('../../modules/Home/Home'));
@@ -32,23 +32,21 @@ const Routes:FC<RoutesProps> = ({ isAuth }) => {
   return (
     <Router history={history}>
       <Navbar />
-      {networkStatus === 'offline' && (
-        <Notification 
-          type='error' 
-          position='bottom-left'
-          title='Something went wrong'
-          message='Internet connection has been lost!'
-        />
-      )}
-      {networkStatus === 'online' && (
-         <Notification 
-          type='success' 
-          position='bottom-left'
-          title='Congrats'
-          message='Internet connection has been restored!'
-          autoClose
-        />
-      )}
+      <Notification 
+        type          = 'error' 
+        position      = 'bottom-left'
+        title         = 'Something went wrong'
+        isShow        = {networkStatus === 'offline'}
+        message       = 'Internet connection has been lost!'
+      />
+      <Notification 
+        type          = 'success' 
+        title         = 'Congrats'
+        position      = 'bottom-left'
+        isShow        = {networkStatus === 'online'}
+        message       = 'Internet connection has been restored!'
+      />
+  
       <Switch>
         <Suspense fallback={Loading}>
           <Route exact path="/" component={Home} />
