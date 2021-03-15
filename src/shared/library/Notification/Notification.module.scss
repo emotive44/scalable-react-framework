@@ -1,7 +1,7 @@
 @import '../styles.scss';
 
 
-.notification { @include fade('hide', 1.5); display: flex; justify-content: space-between; min-width: 20rem; width: 30%; z-index: 19; position: fixed; padding: 1rem; font-size: 1.4rem; border-radius: 0.3em; transition: ease-in-out transform 1.5s; }
+.notification { @include fade('hide', 1.5); @include position(fixed, $z-index: 12); display: flex; justify-content: space-between; min-width: 20rem; width: 30%; padding: 1rem; font-size: 1.4rem; border-radius: 0.3em; transition: ease-in-out transform 1.5s; }
   .notification.bottom-left { bottom: 7rem; left: 4rem; }
   .notification.bottom-right { bottom: 7rem; right: 4rem; }
   .notification.top-right { top: 7rem; right: 4rem; }

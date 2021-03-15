@@ -1,0 +1,5 @@
+@import '../styles.scss';
+
+
+.spinner.button-spinner img { width: 40px; position: static; display: inline-block; margin: -2rem 0 -1.5rem 0; transform: translate(0); }
+.spinner img { @include position(fixed, 50%, null, null, 50%, 2 ); width: 100px; margin-top: 2rem; transform: translate(-50%, -50%);  }

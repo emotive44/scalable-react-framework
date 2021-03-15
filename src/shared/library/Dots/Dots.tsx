@@ -1,6 +1,6 @@
 import React, { FC, useRef, useEffect, useState } from 'react';
 
-import classes from './Dots.module.css';
+import classes from './Dots.module.scss';
 
 
 interface DotsProps {

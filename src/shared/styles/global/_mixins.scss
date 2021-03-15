@@ -1,6 +1,7 @@
 @import 'functions.scss';
 @import 'variables.scss';
 
+
 @mixin set-background($color) {
   background-color: $color;
   color: set-text-color($color);
@@ -73,4 +74,13 @@
     transition: ease-in #{$duration}s;
     transition-property: visibility opacity;
   }
+}
+
+@mixin position($position: absolute, $top: null, $right: null, $bottom: null, $left: null, $z-index: 0) {
+  position: $position;
+  z-index: $z-index;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+  top: $top;
 }

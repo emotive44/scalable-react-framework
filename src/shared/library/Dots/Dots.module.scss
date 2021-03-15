@@ -1,4 +1,7 @@
+@import '../styles.scss';
+
+
 .container { display: flex; align-items: center; }
   .children { position: relative; }
-  .dots { display: flex; position: absolute; bottom: 3.5px; }
+  .dots { @include position($bottom: 3.5px); display: flex; }
   .dot { margin-right: 3px; border-radius: 100%; }

@@ -7,4 +7,4 @@
   .toggle:checked ~ .wrapper { background-color: get-color(gray, dark); }
   .toggle:checked ~ .wrapper .checked { right: 5px; @include theme($theme) { background-color: get-theme-color('accent-color'); }; }
   .wrapper { background-color: get-color(gray, light); margin-right: 1rem; position: relative; width: 50px; height: 25px; border-radius: 50px; transition: .2s; }
-  .checked { @include theme($theme) { background-color: get-theme-color('depth-color'); }; position: absolute; top: 50%; right: calc(100% - 20px); content: ""; width: 15px; height: 15px; border-radius: 50px; transform: translateY(-50%); transition: ease-in-out .3s right; }
+  .checked { @include theme($theme) { background-color: get-theme-color('depth-color'); }; @include position(absolute, 50%, calc(100% - 20px)); content: ""; width: 15px; height: 15px; border-radius: 50px; transform: translateY(-50%); transition: ease-in-out .3s right; }

@@ -4,7 +4,7 @@
 .date-picker { @include theme($theme) { border: 1px solid get-theme-color('primary-border-color'); }; display: flex; height: 35px; min-width: 13rem; border-radius: 2px; }
   .date-picker .input-wrapper { width: 100%; position: relative; }
     .date-picker .input-wrapper .value { display: inline-block; margin: 0.7rem; }
-    .date-picker .input-wrapper .input { position: absolute; right: 0; top: -5px; width: 100%; height: 43px; cursor: pointer; opacity: 0; z-index: 1; box-sizing: border-box; }
-      .date-picker .input-wrapper .input::-webkit-calendar-picker-indicator { position: absolute; cursor: pointer; left: 0; top: 0; width: 100%; height: 100%; margin: 0; padding: 0; }
+    .date-picker .input-wrapper .input { @include position(absolute, -5px, 0, $z-index: 12); width: 100%; height: 43px; cursor: pointer; opacity: 0; box-sizing: border-box; }
+      .date-picker .input-wrapper .input::-webkit-calendar-picker-indicator { @include position(absolute, 0, $left: 0); cursor: pointer; width: 100%; height: 100%; margin: 0; padding: 0; }
   .date-picker .button { position: relative; }
-    .date-picker .button img { position: absolute; height: 30px; right: 4px; top: 2px; z-index: -1; }
+    .date-picker .button img { @include position(absolute, 2px, 4px, $z-index: -1); height: 30px; }
