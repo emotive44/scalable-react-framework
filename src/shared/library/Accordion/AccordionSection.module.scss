@@ -1,16 +1,16 @@
 @import '../styles.scss';
 
 
-.section { @include theme($theme) { border: 1px solid get-theme-color('primary-border-color'); }; margin-bottom: 0.4rem; border-radius: 4px; overflow: hidden; }
+.section { @include border($radius: 4px); margin-bottom: 0.4rem; overflow: hidden; }
   .section.horizontal-section { display: flex; margin-right: 0.5rem; }
     .section.horizontal-section .title { justify-content: center; width: 4rem; display: flex; flex-direction: column; }
-    .section.horizontal-section .title.title-open { border-bottom: none; @include theme($theme) { background-color: get-theme-color('accent-color'); border-right: 1px solid get-theme-color('primary-border-color'); } }
+    .section.horizontal-section .title.title-open { border-bottom: none !important; @include border(right); @include theme($theme) { background-color: get-theme-color('accent-color'); } }
       .section.horizontal-section .title p { writing-mode: vertical-rl; transform: rotate(180deg); } 
     .section.horizontal-section .horizontal-children { overflow: hidden; transition: 0.8s ease-in-out; transition-property: margin max-width; }
 
   .section .title { display: flex; justify-content: space-between; vertical-align: middle; padding: 0.5rem; cursor: pointer; transition: 0.2s ease-in background-color; }
     .section .title:hover { @include theme($theme) { background-color: get-theme-color('accent-color'); } }
-    .section .title.title-open { @include theme($theme) { background-color: get-theme-color('accent-color'); border-bottom: 1px solid get-theme-color('primary-border-color'); } }
+    .section .title.title-open { @include border(bottom); @include theme($theme) { background-color: get-theme-color('accent-color'); } }
     .section .title .arrow { @include theme($theme) { color: get-theme-color('primary-icon-color'); } margin-right: 0.3rem; font-size: 15px; display: flex; align-items: center; }
       .section .title .arrow .open { transition: 0.4s ease-in-out; transform: rotate(180deg); }
       .section .title .arrow .close { transition: 0.4s ease-in-out; transform: rotate(0deg); }

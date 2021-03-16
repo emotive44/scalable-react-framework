@@ -7,8 +7,9 @@
     .range .border-value.right { margin-left: 0.2rem; }
   .range .wrapper { position: relative; display: flex; width: 70%; }
     .range .wrapper input[type=range] { -webkit-appearance: none; width: 100%; display: block; align-self: center; height: 3px; @include theme($theme) { background: get-theme-color('accent-color'); } }
-    .range .wrapper input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; @include theme($theme) { border: 3px solid get-theme-color('accent-color'); } height: 20px; cursor: pointer; width: 20px; background: get-color(white); border-radius: 50%; }
-    .range .wrapper input[type=range]::-moz-range-thumb { -webkit-appearance: none; @include theme($theme) { border: 3.5px solid get-theme-color('accent-color'); } height: 17px; width: 17px; cursor: pointer; background: get-color(white); border-radius: 50%; }
+    .range .wrapper input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; @include border(null, 50%, 3, 'accent-color'); height: 20px; cursor: pointer; width: 20px; background: get-color(white); }
+    .range .wrapper input[type=range]::-moz-range-thumb { -webkit-appearance: none; @include border(null, 5
+      0%, 3.5, 'accent-color'); height: 17px; width: 17px; cursor: pointer; background: get-color(white); }
     .range .wrapper .bubble { @include theme($theme) { background-color: get-theme-color('accent-color'); color: get-theme-color('white-text-color'); } @include position(absolute, 6px, null, null, 50%); min-width: 50px; text-align: center; padding: 4px 12px; border-radius: 4px; transform: translateX(-50%); }
-      .range .wrapper .bubble::after { @include theme($theme) { border-top: 10px solid get-theme-color('accent-color'); } @include position(absolute, null, null, -9px, 18px); content: ''; border-left: 8px solid transparent; border-right: 8px solid transparent; }
+      .range .wrapper .bubble::after { @include border(top, null, 10, 'accent-color'); @include position(absolute, null, null, -9px, 18px); content: ''; border-left: 8px solid transparent; border-right: 8px solid transparent; }
       

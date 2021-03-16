@@ -5,8 +5,8 @@
   .label.left { flex-direction: row; }
   .label.left > span { margin-right: 1rem; }
   .label > span { margin-left: 1rem; }
-  .wrapper { @include theme($theme) { border: 2px solid get-theme-color('secondary-border-color'); }; position: relative; display: flex; justify-content: center; align-items: center; width: 23px; height: 23px; background-color: transparent; border-radius: 50px; }
-  .wrapper.hover { @include theme($theme) { border-color: get-theme-color('primary-border-color'); }; transition: ease-in-out 0.3s border-color; }
-  .wrapper.check { @include theme($theme) { border: 2.5px solid get-theme-color('secondary-border-color'); }; }
+  .wrapper { @include border($size: 2.5, $color: 'secondary-border-color'); position: relative; display: flex; justify-content: center; align-items: center; width: 23px; height: 23px; background-color: transparent; border-radius: 50px; }
+  .wrapper.hover { @include border(color); transition: ease-in-out 0.3s border-color; }
+  .wrapper.check { @include border($size: 2.5, $color: 'secondary-border-color'); }
   .checked { @include theme($theme) { background-color: get-theme-color('secondary-border-color'); }; content: ""; width: 9px; height: 9px; border-radius: 50px; opacity: 0; transition: ease-in-out 0.4s opacity; }
   input:checked + .checked { opacity: 1; }

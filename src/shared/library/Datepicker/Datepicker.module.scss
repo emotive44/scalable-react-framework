@@ -1,7 +1,7 @@
 @import '../styles.scss';
 
 
-.date-picker { @include theme($theme) { border: 1px solid get-theme-color('primary-border-color'); }; display: flex; height: 35px; min-width: 13rem; border-radius: 2px; }
+.date-picker { @include border($radius: 3px); display: flex; height: 35px; min-width: 13rem; }
   .date-picker .input-wrapper { width: 100%; position: relative; }
     .date-picker .input-wrapper .value { display: inline-block; margin: 0.7rem; }
     .date-picker .input-wrapper .input { @include position(absolute, -5px, 0, $z-index: 12); width: 100%; height: 43px; cursor: pointer; opacity: 0; box-sizing: border-box; }

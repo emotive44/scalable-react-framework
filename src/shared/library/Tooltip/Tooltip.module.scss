@@ -1,7 +1,7 @@
 @import '../styles.scss';
 
 
-.triangle { content: ""; position: absolute; @include theme($theme) { border-top-color: get-theme-color('body-color'); }; border: solid transparent; border-width: 8px; margin-left: -20px; pointer-events: none; }
+.triangle { @include border(top-color, $color: body-color); content: ""; position: absolute; border: solid transparent; border-width: 8px; margin-left: -20px; pointer-events: none; }
 .show-message { @include fade('show', 0.3); }
 
 .tooltip { display: flex; align-items: center; width: 100%; }

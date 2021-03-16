@@ -6,7 +6,7 @@
     .label > span { margin-left: 0.7rem; }
     .label.left { flex-direction: row; }
     .label.left > span { margin-right: 0.7rem; }
-  .wrapper { @include theme($theme) { border: 2px solid get-theme-color('secondary-icon-color'); }; position: relative; display: flex; justify-content: center; align-items: center; width: 20px; height: 20px; background: transparent; border-radius: 5px; }
-    .wrapper.hover { @include theme($theme) { border-color: get-theme-color('primary-border-color'); }; transition: ease-in-out 0.3s border-color; }
-    .checked { @include theme($theme) { border-right: 2.2px solid get-theme-color('primary-border-color'); border-bottom: 2.2px solid get-theme-color('primary-border-color'); }; content: ""; width: 4px; height: 10px; margin-top: -2px; opacity: 0; transform: rotate(30deg); transition: .3s ease-in-out opacity; }
+  .wrapper { @include border(null, 5px, 2, 'secondary-icon-color'); position: relative; display: flex; justify-content: center; align-items: center; width: 20px; height: 20px; background: transparent; }
+    .wrapper.hover { @include border(color); transition: ease-in-out 0.3s border-color; }
+    .checked { @include border(right, null, 2.2); @include border(bottom, null, 2.2); content: ""; width: 4px; height: 10px; margin-top: -2px; opacity: 0; transform: rotate(30deg); transition: .3s ease-in-out opacity; }
     input:checked + .checked { opacity: 1;}

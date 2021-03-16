@@ -84,3 +84,22 @@
   left: $left;
   top: $top;
 }
+
+@mixin border($type: null, $radius: null, $size: 1, $color: 'primary-border-color') {
+  @if($type and $type != 'top' and $type != 'right' and $type != 'bottom' and $type != 'left') {
+    @include theme($theme) {
+      border-#{$type}: get-theme-color($color);
+    }
+  }
+  @else if($type) {
+    @include theme($theme) {
+      border-#{$type}: #{$size}px solid get-theme-color($color);
+    }
+  }
+  @else {
+    @include theme($theme) {
+      border: #{$size}px solid get-theme-color($color);
+      border-radius: #{$radius};
+    }
+  }
+}
