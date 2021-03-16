@@ -17,7 +17,7 @@
     .icon.left + .label { left: 3.5rem; }
     .icon.left + input, 
     .icon.left + .label + input { padding-left: 3.4rem; }
-  .label { @include position(absolute, null, null, -0.1rem, 0.7rem); width: 97%; font-size: 1.4rem; pointer-events: none; margin-bottom: 0.5rem; transition: 0.2s ease-in-out; transition-property: bottom, left, font-size; }
+  .label { @include position(absolute, null, null, -0.1rem, 0.7rem); @include multiple-transition(0.2s, bottom, left, font-size); width: 97%; font-size: 1.4rem; pointer-events: none; margin-bottom: 0.5rem; }
     .label.top {  left: 0.1rem; bottom: 2.2rem; }
   .inputtag { @include theme($theme) { color: get-theme-color('primary-text-color'); background-color: get-theme-color('body-color'); }; @include border($radius: 2px); width: 100%; padding: 0.2rem; }
   .inputtag[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; } /*remove default strokes */

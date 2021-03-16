@@ -3,7 +3,7 @@
 
 .carousel { @include border($radius: 7px); width: 100%; height: 100%; overflow: hidden; display: flex; }
   .carousel .arrow { @include theme($theme) { background-color: get-theme-color('body-color') }; @include vertically-centred; justify-content: center; width: 5rem; opacity: 1; cursor: pointer; transition: 0.3s ease-in-out opacity; }
-    .carousel .arrow i { @include theme($theme) { background-color: get-theme-color('accent-color') }; width: 4rem; height: 4rem; display: flex; border-radius: 50%; padding: 0.7rem; transition: 0.3s ease-in-out; transition-property: color background-color; }
+    .carousel .arrow i { @include theme($theme) { background-color: get-theme-color('accent-color') }; @include multiple-transition(0.3s, color, background-color); width: 4rem; height: 4rem; display: flex; border-radius: 50%; padding: 0.7rem; }
       .carousel .arrow i::before { width: 100%; align-self: center; text-align: center; }
     .carousel .arrow:hover { opacity: 0.6; }
     .carousel .arrow:hover > i { @include theme($theme) { background-color: get-theme-color('depth-color'); color: get-theme-color('white-text-color'); }; }
