@@ -1,13 +1,13 @@
 @import '../styles.scss';
 
 
-.container { @include border($radius: 4px); position: relative; height: auto; cursor: default; min-height: 2.5rem; max-height: 100%; display: flex; justify-content: space-between; align-items: center; }
+.container { @include border($radius: 4px); @include vertically-centred; position: relative; height: auto; cursor: default; min-height: 2.5rem; max-height: 100%; justify-content: space-between; }
   .container .select { margin: 0.6rem; display: flex; justify-content: space-between; width: 98%; }
     .container .select .select-value { max-width: 70%; }
     .container .select-value  p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;  }
     .container .select .icons { display: flex; margin: 0 1rem; }
       .container .select .icons small { @include theme($theme) { background-color: get-theme-color('primary-icon-color'); }; width: 1.5px; margin: 0 1.5rem; }
-      .container .select .icons .icon { @include theme($theme) { color: get-theme-color('secondary-icon-color'); }; display: flex; align-items: center; transition: 0.2s ease-in-out color; }
+      .container .select .icons .icon { @include theme($theme) { color: get-theme-color('secondary-icon-color'); }; @include vertically-centred; transition: 0.2s ease-in-out color; }
         .container .select .icons .icon:hover { @include theme($theme) { color: get-theme-color('primary-icon-color'); }; cursor: pointer; }
       .container .select .icons .icon.arrow { position: relative; transition: 0.4s ease-in-out transform, 0.4s ease-in-out padding; }
       .container .select .icons .icon.arrow.open { @include theme($theme) { color: get-theme-color('primary-icon-color'); }; transform: rotate(180deg); }

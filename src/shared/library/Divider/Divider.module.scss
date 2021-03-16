@@ -1,7 +1,7 @@
 @import '../styles.scss';
 
 
-.divider { display: flex; align-items: center; flex-direction: row; justify-content: center; align-self: stretch; margin: 0.5rem; }
+.divider { @include vertically-centred; flex-direction: row; justify-content: center; align-self: stretch; margin: 0.5rem; }
   .divider.horizontal { flex-direction: column; }
   .divider span { margin: 1rem; }
   .divider small { width: 1.5px; height: 1.5px; flex: 1; }

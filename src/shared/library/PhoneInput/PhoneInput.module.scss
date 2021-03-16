@@ -3,7 +3,7 @@
 
 .phone-input { display: flex; }
   .phone-input .select { width: 9rem; height: 3rem; border-radius: 0; border-bottom-left-radius: 3px; border-top-left-radius: 3px; }
-    .phone-input .select .custom-temp-opts { width: 83%; display: flex; justify-content: space-between; align-items: center; }
+    .phone-input .select .custom-temp-opts { @include vertically-centred; width: 83%;justify-content: space-between; }
       .phone-input .select .custom-temp-opts img { width: 26px; height: 16px; margin-right: 0.5rem; }
       .phone-input .select .custom-temp-opts > span { text-align: center; margin-right: 0.5rem; }
   .phone-input .input { @include border($radius: 0); padding-left: 1rem; height: 3rem; border-left: none !important; border-top-right-radius: 3px !important; border-bottom-right-radius: 3px !important; }

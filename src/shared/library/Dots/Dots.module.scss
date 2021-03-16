@@ -1,7 +1,7 @@
 @import '../styles.scss';
 
 
-.container { display: flex; align-items: center; }
+.container { @include vertically-centred; }
   .children { position: relative; }
   .dots { @include position($bottom: 3.5px); display: flex; }
   .dot { margin-right: 3px; border-radius: 100%; }

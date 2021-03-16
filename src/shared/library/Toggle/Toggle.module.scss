@@ -1,7 +1,7 @@
 @import '../styles.scss';
 
 
-.label { margin: 0 5px; cursor: pointer; display: flex; align-items: center; flex-direction: row-reverse; }
+.label { @include vertically-centred; margin: 0 5px; cursor: pointer; flex-direction: row-reverse; }
   .label.left { flex-direction: row; }
   .label.left .wrapper { margin-left: 1rem; }
   .toggle:checked ~ .wrapper { background-color: get-color(gray, dark); }

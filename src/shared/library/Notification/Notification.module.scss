@@ -17,8 +17,8 @@
   .notification .content { padding: 0.5rem 0; width: 90%; }
     .notification .content .title { display: flex; justify-content: center; margin-bottom: 1rem; }
       .notification .content .title i {  font-size: 20px; margin-right: 0.4em; }
-      .notification .content .title .title-text { display: flex; align-items: center; }
-  .notification .close { display: flex; align-items: center; }
+      .notification .content .title .title-text { @include vertically-centred; }
+  .notification .close { @include vertically-centred; }
     .notification .close i { cursor: pointer; font-size: 30px; }
   .notification.show { @include fade('show', 1.5); transform: translateX(0); }
 

@@ -9,7 +9,7 @@
   .tag.light { @include set-background($light-color); }
   .tag.dark { @include set-background($dark-color);  }
   .tag > i, .tag > p { margin: 0.5rem; }
-  .tag .close { display: flex; align-items: center; padding: 0.2rem 1rem; border-radius: 3px; align-self: stretch; cursor: pointer; transition: 0.3s ease background-color; }
+  .tag .close { @include vertically-centred; padding: 0.2rem 1rem; border-radius: 3px; align-self: stretch; cursor: pointer; transition: 0.3s ease background-color; }
     .tag.tag.secondary .close { @include background-hover($secondary-color, $secondary-hover-color); }
     .tag.success .close { @include background-hover($success-color, $success-hover-color); }
     .tag.danger .close { @include background-hover($danger-color, $danger-hover-color); }

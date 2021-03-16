@@ -4,7 +4,7 @@
 .triangle { @include border(top-color, $color: body-color); content: ""; position: absolute; border: solid transparent; border-width: 8px; margin-left: -20px; pointer-events: none; }
 .show-message { @include fade('show', 0.3); }
 
-.tooltip { display: flex; align-items: center; width: 100%; }
+.tooltip { @include vertically-centred; width: 100%; }
   .tooltip .children { cursor: help; position: relative; width: 30rem; }
   .tooltip i { @include theme($theme) { color: get-theme-color('secondary-icon-color'); }; font-size: 1.3rem; }
     .tooltip:hover i {  @include theme($theme) { color: get-theme-color('primary-icon-color'); }; }

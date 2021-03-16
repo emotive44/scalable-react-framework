@@ -5,7 +5,7 @@
   .label.left { flex-direction: row; }
   .label.left > span { margin-right: 1rem; }
   .label > span { margin-left: 1rem; }
-  .wrapper { @include border($size: 2.5, $color: 'secondary-border-color'); position: relative; display: flex; justify-content: center; align-items: center; width: 23px; height: 23px; background-color: transparent; border-radius: 50px; }
+  .wrapper { @include border(null, 50px, 2.5, 'secondary-border-color'); @include vertically-centred; position: relative; justify-content: center; width: 23px; height: 23px; background-color: transparent; }
   .wrapper.hover { @include border(color); transition: ease-in-out 0.3s border-color; }
   .wrapper.check { @include border($size: 2.5, $color: 'secondary-border-color'); }
   .checked { @include theme($theme) { background-color: get-theme-color('secondary-border-color'); }; content: ""; width: 9px; height: 9px; border-radius: 50px; opacity: 0; transition: ease-in-out 0.4s opacity; }
