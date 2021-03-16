@@ -6,7 +6,7 @@
     .carousel .arrow i { @include theme($theme) { background-color: get-theme-color('accent-color') }; @include multiple-transition(0.3s, color, background-color); width: 4rem; height: 4rem; display: flex; border-radius: 50%; padding: 0.7rem; }
       .carousel .arrow i::before { width: 100%; align-self: center; text-align: center; }
     .carousel .arrow:hover { opacity: 0.6; }
-    .carousel .arrow:hover > i { @include theme($theme) { background-color: get-theme-color('depth-color'); color: get-theme-color('white-text-color'); }; }
+    .carousel .arrow:hover > i { @include theme($theme) { background-color: get-theme-color('depth-color'); }; @include color('white-text-color'); }
   .carousel .main { flex: 1; margin: 0.5rem 1.5rem; width: 80%; }
     .carousel .main .images { position: relative; display: flex; justify-content: center; height: 100%; min-width: 50%; }
     .carousel .main .images.with-footer { height: 82%; margin: 1.5rem 0; }

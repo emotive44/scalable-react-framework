@@ -19,7 +19,7 @@
     .icon.left + .label + input { padding-left: 3.4rem; }
   .label { @include position(absolute, null, null, -0.1rem, 0.7rem); @include multiple-transition(0.2s, bottom, left, font-size); width: 97%; font-size: 1.4rem; pointer-events: none; margin-bottom: 0.5rem; }
     .label.top {  left: 0.1rem; bottom: 2.2rem; }
-  .inputtag { @include theme($theme) { color: get-theme-color('primary-text-color'); background-color: get-theme-color('body-color'); }; @include border($radius: 2px); width: 100%; padding: 0.2rem; }
+  .inputtag { @include theme($theme) { background-color: get-theme-color('body-color'); }; @include color(); @include border($radius: 2px); width: 100%; padding: 0.2rem; }
   .inputtag[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; } /*remove default strokes */
   .inputtag[type=number] { -moz-appearance: textfield; }
   .errmsg { color: $danger-color; width: 99%; font-size: 1.3rem; margin: 0.2rem 0 0 0.2rem; }

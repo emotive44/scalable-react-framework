@@ -104,6 +104,12 @@
   }
 }
 
+@mixin color($color: 'primary-text-color') {
+  @include theme($theme) {
+    color: get-theme-color($color);
+  }
+}
+
 @mixin vertically-centred {
   display: flex;
   align-items: center;

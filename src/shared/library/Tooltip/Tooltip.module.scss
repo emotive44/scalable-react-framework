@@ -6,8 +6,8 @@
 
 .tooltip { @include vertically-centred; width: 100%; }
   .tooltip .children { cursor: help; position: relative; width: 30rem; }
-  .tooltip i { @include theme($theme) { color: get-theme-color('secondary-icon-color'); }; font-size: 1.3rem; }
-    .tooltip:hover i {  @include theme($theme) { color: get-theme-color('primary-icon-color'); }; }
+  .tooltip i { @include color('secondary-icon-color'); font-size: 1.3rem; }
+    .tooltip:hover i {  @include color('primary-icon-color'); }
   .tooltip .message { @include theme($theme) { background-color: get-theme-color('body-color'); box-shadow: 0 0 15px 0 get-theme-color('shadow-color'); }; @include fade('hide'); @include position($z-index: 12); padding: 10px; font-size: 1.2rem; font-weight: 300; border-radius: 3px; }
   .tooltip.position-top .message { min-width: 7rem; max-width: 40rem; top: 0; z-index: 10; transform: translateY(-100%); }
     .tooltip.position-top .message::after { @extend .triangle; top: 99%; left: 38px; }
