@@ -44,7 +44,9 @@ const Modal:FC<ModalProps> = ({
         <main className={classes.main}> {main} </main>
       </CustomScroll>
 
-      <footer className={classes.footer}> {footer} </footer>
+      {footer && (
+        <footer className={classes.footer}> {footer} </footer>
+      )}
 
       </section>
       <div 
