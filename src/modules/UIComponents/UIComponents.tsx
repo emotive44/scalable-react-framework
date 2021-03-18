@@ -9,9 +9,10 @@ import {
   Button, Avatar, Dots, Note, NotFound, Accordion,
   Text, Notification, Modal, CustomScroll, Tabs, Tab,
   Datepicker, RangeSlider, Carousel, Select, Option,
-  Tag, PhoneInput, ImageGallery, Timeline,
+  Tag, PhoneInput, ImageGallery, Timeline, TimelineItem,
 } from '../../shared/library';
 
+import timelineData from '../../shared/mocks/timelineData';
 import arrayWithImgs from '../../shared/mocks/images';
 
 
@@ -623,7 +624,27 @@ const UIComponents:FC = () => {
       </div>
 
       <div style={{ width: '90%', margin: '2rem auto' }}>
-        <Timeline dateFormat="DD/MM/YYYY" />
+        <Timeline>
+        {timelineData.map((item, i) => {
+            return (
+              <TimelineItem
+                key             = {i}  
+                date            = {item.date} 
+                dateFormat      = "MM/DD/YYYY"
+                title           = {item.title}
+                content         = {item.content} 
+                icon            = {<i className="fas fa-user" />}
+              />
+            );
+          })}
+          <TimelineItem date={new Date()} dateFormat="MM/DD/YYYY">
+            <div>
+              <p>Custom template</p>
+              <i className="fas fa-user" />
+              <Tag type="warning" text="Some Text" closeClickCallback={() => {}} />
+            </div>
+          </TimelineItem>
+        </Timeline>
       </div>
 
       <div style={{ width: '90%', margin: '0 auto' }}>

@@ -1,0 +1,23 @@
+@import '../styles.scss';
+
+
+.sign { @include border($size: 5); border-bottom: none !important; position: relative; width: 49%; left: calc(1%); }
+  .sign:first-child { @include border(right, $size: 5.3); }
+  .sign:nth-child(odd) { border-top-right-radius: 35px; border-left: none; }
+    .sign:nth-child(odd) .icon { left: -65px; }
+  .sign:nth-child(even) { left: calc(50% - 5px); border-top-left-radius: 35px; border-right: none; }
+      .sign:nth-child(even) .icon { right: -65px; }
+  .sign .wrapper { width: 85%; margin: 0 auto; margin-top: 2rem; padding: 2em 0.5em 0.5em 0.5em; border-radius: 8px; position: relative; }
+    .sign .wrapper .right-handle,
+    .sign .wrapper .left-handle { @include position($top: -31px); content: ''; width: 7px; height: 40px; border: 1px solid white; border-radius: 18px; }
+    .sign .wrapper .right-handle { right: calc(10%); }
+    .sign .wrapper .left-handle { left: calc(10%); }
+    .sign .wrapper h3 { @include position($top: -0.5em); @include color('body-color'); width: 100%; text-align: center; }
+    .sign .wrapper .icon { @include position($top: -47px); padding: 1em; border-radius: 50%; }
+
+@include break-points(phone) {
+  .sign { left: calc(5% - 7px); border-right: none !important; width: 90%; margin-bottom: 2rem; }
+    .sign:nth-child(odd) { @include border(left, $size: 5.5); border-top-left-radius: 35px; border-top-right-radius: 0; }
+      .sign:nth-child(odd) .icon { right: -65px; left: auto; }
+    .sign:nth-child(even) { left: calc(5% - 7px); }  
+}

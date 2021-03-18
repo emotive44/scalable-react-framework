@@ -24,6 +24,7 @@ export { default as Timeline } from './Timeline/Timeline';
 export { default as Accordion } from './Accordion/Accordion';
 export { default as PhoneInput } from './PhoneInput/PhoneInput';
 export { default as Datepicker } from './Datepicker/Datepicker';
+export { default as TimelineItem } from './Timeline/TimelineItem';
 export { default as RangeSlider } from './RangeSlider/RangeSlider';
 export { default as ImageGallery } from './ImageGallery/ImageGallery';
 export { default as CustomScroll } from './CustomScroll/CustomScroll';

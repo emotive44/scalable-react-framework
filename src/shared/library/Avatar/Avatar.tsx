@@ -1,9 +1,6 @@
 import React, { FC } from 'react';
-
 import classes from './Avatar.module.scss';
 
-
-type Letter = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'G' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z';
 
 interface AvatarProps {
   abbr          : string,
@@ -21,12 +18,12 @@ const Avatar: FC<AvatarProps> = ({
   const mainClasses = [classes.avatar, classes.medium];
 
   const firstLetter = (name: string) => {
-    return name.substr(0, 1).toUpperCase() as Letter;
+    return name.substr(0, 1).toUpperCase();
   }
 
   const secondLetter = (name: string) => {
     if(name.split(' ').length > 0) {
-      return name.split(' ')[1]?.substr(0, 1).toUpperCase() as Letter;
+      return name.split(' ')[1]?.substr(0, 1).toUpperCase();
     }
   }
 
@@ -58,7 +55,7 @@ const Avatar: FC<AvatarProps> = ({
       'X'		: '#4EB68C',
       'Y'		: '#85B1DD',
       'Z'		: '#A24176'
-    };
+    } as any;
 
     return colors[firstLetter(abbr)];
   }
