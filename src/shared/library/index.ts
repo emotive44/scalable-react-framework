@@ -20,6 +20,7 @@ export { default as NotFound } from './NotFound/NotFound';
 export { default as CheckBox } from './CheckBox/CheckBox';
 export { default as Carousel } from './Carousel/Carousel';
 export { default as TextArea } from './TextArea/TextArea';
+export { default as Timeline } from './Timeline/Timeline';
 export { default as Accordion } from './Accordion/Accordion';
 export { default as PhoneInput } from './PhoneInput/PhoneInput';
 export { default as Datepicker } from './Datepicker/Datepicker';

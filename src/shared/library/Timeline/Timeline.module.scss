@@ -1,0 +1,4 @@
+@import '../styles.scss';
+
+.timeline { position: relative; padding: 0.5em; }
+  .timeline::before { @include break-points(phone) { left: calc(5%); }; @include theme($theme) { background-color: get-theme-color('primary-border-color'); } @include position(absolute, 37px, null, -0.5px, calc(50% - 5px)); content: ''; width: 5px; }

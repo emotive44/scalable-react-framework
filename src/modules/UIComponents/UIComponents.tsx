@@ -9,7 +9,7 @@ import {
   Button, Avatar, Dots, Note, NotFound, Accordion,
   Text, Notification, Modal, CustomScroll, Tabs, Tab,
   Datepicker, RangeSlider, Carousel, Select, Option,
-  Tag, PhoneInput, ImageGallery
+  Tag, PhoneInput, ImageGallery, Timeline,
 } from '../../shared/library';
 
 import arrayWithImgs from '../../shared/mocks/images';
@@ -620,6 +620,10 @@ const UIComponents:FC = () => {
           // clickImgChange
           withFooter
         />
+      </div>
+
+      <div style={{ width: '90%', margin: '2rem auto' }}>
+        <Timeline dateFormat="DD/MM/YYYY" />
       </div>
 
       <div style={{ width: '90%', margin: '0 auto' }}>
