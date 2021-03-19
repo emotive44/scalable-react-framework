@@ -1,25 +1,11 @@
 @import '../styles.scss';
 
 
-.gallery { display: grid; grid-gap: 0.8rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); grid-auto-rows: 220px; grid-auto-flow: dense; }
-  .gallery img { @include theme($theme) { background-color: get-theme-color('primary-border-color'); }; @include border($size: 3); width: 100%; height: 100%; object-fit: cover; scale: (1); opacity: 0.95; transition: 0.2s ease-in transform, 0.2s  ease-in opacity; }
+.gallery { width: 90%; margin: 0 auto; display: grid; grid-gap: 0.8rem; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-auto-rows: 20rem; grid-auto-flow: dense; }
+  .gallery img { @include theme($theme) { background-color: get-theme-color('primary-border-color'); }; @include border($size: 3); @include multiple-transition(0.2s, transform, opacity); width: 100%; height: 100%; object-fit: cover; scale: (1); opacity: 0.95; }
     .gallery img:hover { transform: scale(1.02); opacity: 1; }
-    .gallery img.panorama { grid-column: span 4; }
+    .gallery img.panorama { grid-column: span 4; @include break-points('desktop') { grid-column: span 3; }; @include break-points('tablet') { grid-column: span 2; }; }
     .gallery img.landscape { grid-column: span 2; }
     .gallery img.portrait { grid-row: span 2; }
     .gallery img.square { grid-column: span 1; }
     .gallery img.big-square { grid-row: span 2; grid-column: span 2; }
-
-@include break-points('desktop') {
-  .gallery { grid-template-columns: repeat(3, 1fr); }
-    .gallery img.panorama { grid-column: span 3; }
-}
-
-@include break-points('tablet') {
-  .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 250px; }
-    .gallery img.panorama { grid-column: span 2; }
-}
-
-@include break-points('phone') {
-  .gallery { grid-template-columns: 1fr; grid-gap: 1rem 0; }
-}
