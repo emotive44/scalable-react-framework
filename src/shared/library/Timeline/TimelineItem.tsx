@@ -1,7 +1,6 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, useState, useRef, useEffect } from 'react';
 import classes from './TimelineItem.module.scss';
 import moment from 'moment';
-
 
 
 const colors: any = {
@@ -39,18 +38,34 @@ const TimelineItem:FC<TimelineItemProps> = ({
 }) => {
   const month = moment(date).format('M');
 
+  const ref = useRef(null);
+  const [signClasses, setSignClasses] = useState([classes.sign]);
+ 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      let isShow = entries[0].isIntersecting;
+      if(isShow) {
+        setSignClasses(prev => [...prev, classes.animate]);
+      } else {
+        setSignClasses(prev => [...prev.filter(cl => cl !== classes.animate)]);
+      }
+    });
+
+    observer.observe(ref.current!);
+  }, [ref]);
+
   return (
-    <div className={classes.sign}>
+    <div ref={ref} className={signClasses.join(' ')}>
+      {icon && (
+          <span className={classes.icon} style={{ backgroundColor: colors[month] }}>
+            {icon}
+          </span>
+        )}
       <div className={classes.wrapper} style={{ backgroundColor: colors[month] }}>
         <span className={classes['left-handle']} style={{ backgroundColor: colors[month] }} />
         <span className={classes['right-handle']} style={{ backgroundColor: colors[month] }} />
         <h3>{moment(date).format(dateFormat)}</h3>
         {title && <h4>{title}</h4>}
-        {icon && (
-          <span className={classes.icon} style={{ backgroundColor: colors[month] }}>
-            {icon}
-          </span>
-        )}
         {children ? children : <p>{content}</p>}
       </div>
     </div>
