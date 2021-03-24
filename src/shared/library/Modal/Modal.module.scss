@@ -12,6 +12,6 @@
   .modal.closed { @include fade('hide', 0.9); }
     .modal.closed + .overlay { @include fade('hide', 0.9); }
 
-@include break-points('phone') {
+@include break-points($bp-phone) {
   .modal { min-width: 95%; top: 5%; }
 }

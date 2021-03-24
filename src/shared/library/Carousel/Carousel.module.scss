@@ -25,7 +25,7 @@
         .carousel .main .footer-wrapper .footer::-webkit-scrollbar { display: none; }
         .carousel .main .footer-wrapper .footer .img-footer { min-width: 40px; height: 40px; cursor: pointer; border-radius: 4px; background-size: cover; background-position: center; }
 
-@include break-points('custom', 1024) {
+@include break-points($bp-custom, 1024) {
   .carousel .main .images .img { max-width: 80%; }
   .carousel .main .images .next { transform: scale(0.8) translateX(30%); }
   .carousel .main .images .previous { transform: scale(0.8) translateX(-30%); }

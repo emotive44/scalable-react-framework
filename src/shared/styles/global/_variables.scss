@@ -4,6 +4,12 @@ $breakpoint-desktop         : 1250px;
 $breakpoint-tablet          : 900px;
 $breakpoint-phone           : 600px;
 
+$bp-desktop-large           : desktop-large;
+$bp-desktop                 : desktop;
+$bp-tablet                  : tablet;
+$bp-phone                   : phone;
+$bp-custom                  : custom;
+
 // font-families
 $sans-serif                 : 'Open Sans', sans-serif;
 $serif                      : Georgia, 'Times New Roman', Times, serif !important;
