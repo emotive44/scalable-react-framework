@@ -16,7 +16,7 @@
     .sign .wrapper .left-handle { @include position($top: -31px); content: ''; width: 7px; height: 40px; border: 1px solid white; border-radius: 18px; }
     .sign .wrapper .right-handle { right: calc(10%); }
     .sign .wrapper .left-handle { left: calc(10%); }
-    .sign .wrapper h3 { @include position($top: -0.5em); @include color('body-color'); width: 100%; text-align: center; }
+    .sign .wrapper h3 { @include position($top: -0.5em); @include color($body-color); width: 100%; text-align: center; }
     .sign .icon { position: absolute; padding: 1em; border-radius: 50%; }
 
 @include break-points(phone) {

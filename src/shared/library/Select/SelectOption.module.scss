@@ -1,8 +1,8 @@
 @import '../styles.scss';
 
 
-.option { @include theme($theme) { @include background-hover(get-theme-color('body-color'), get-theme-color('accent-color')); color: get-theme-color('primary-text-color'); }; @include border(bottom); @include vertically-centred; padding: 0.5rem; cursor: pointer; transition: 0.3s ease background-color; }
-  .option.checked-option { @include bg-color('accent-color'); }
+.option { @include theme($theme) { @include background-hover(get-theme-color($body-color), get-theme-color($accent-color)); color: get-theme-color($primary-text-color); }; @include border(bottom); @include vertically-centred; padding: 0.5rem; cursor: pointer; transition: 0.3s ease background-color; }
+  .option.checked-option { @include bg-color($accent-color); }
   .option:last-child { border-bottom: none; padding-bottom: 7px; }
   .option .content { @include vertically-centred; flex: 1; }
     .option .content i { margin-right: 1rem; }

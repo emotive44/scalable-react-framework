@@ -1,14 +1,30 @@
 // breakpoints
-$breakpoint-desktop-large: 1600px;
-$breakpoint-desktop: 1250px;
-$breakpoint-tablet: 900px;
-$breakpoint-phone: 600px;
+$breakpoint-desktop-large   : 1600px;
+$breakpoint-desktop         : 1250px;
+$breakpoint-tablet          : 900px;
+$breakpoint-phone           : 600px;
 
 // font-families
-$sans-serif: 'Open Sans', sans-serif;
-$serif: Georgia, 'Times New Roman', Times, serif !important;
-$mono: monospace !important;
+$sans-serif                 : 'Open Sans', sans-serif;
+$serif                      : Georgia, 'Times New Roman', Times, serif !important;
+$mono                       : monospace !important;
 
 // font-sizes
-$html-font-size: 10px;
-$firefox-html-font-size: 11px;
+$html-font-size             : 10px;
+$firefox-html-font-size     : 11px;
+
+// theme colors
+$body-color                 : body-color;
+$accent-color               : accent-color;
+$depth-color                : depth-color;
+$primary-text-color         : primary-text-color;
+$secondary-text-color       : secondary-text-color;
+$white-text-color           : white-text-color;
+$primary-icon-color         : primary-icon-color;
+$secondary-icon-color       : secondary-icon-color;
+$link-color                 : link-color;
+$primary-border-color       : primary-border-color;
+$secondary-border-color     : secondary-border-color;
+$shadow-color               : shadow-color;
+$scroll-color               : scroll-color;
+$overlay-color              : overlay-color;

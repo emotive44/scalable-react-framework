@@ -1,14 +1,14 @@
 @import '../styles.scss';
 
 
-.modal { @include bg-color('accent-color'); @include border($radius: 7px); @include fade('show', 0.9); @include position(fixed, 18%, null, null, 50%, 30); display: flex; flex-direction: column; min-width: 45rem; max-width: 60%; min-height: 15rem; transform: translateX(-50%); }
-  .modal .header { @include border(bottom, $color: 'secondary-border-color'); @include vertically-centred; font-size: 18px; text-align: center; justify-content: space-between; padding: 1rem 0.5rem; }
+.modal { @include bg-color($accent-color); @include border($radius: 7px); @include fade('show', 0.9); @include position(fixed, 18%, null, null, 50%, 30); display: flex; flex-direction: column; min-width: 45rem; max-width: 60%; min-height: 15rem; transform: translateX(-50%); }
+  .modal .header { @include border(bottom, $color: $secondary-border-color); @include vertically-centred; font-size: 18px; text-align: center; justify-content: space-between; padding: 1rem 0.5rem; }
   .modal .header .header-wrapper { flex: 1 1 90%; }
-  .modal .header .close i { @include color('secondary-icon-color'); font-size: 30px; margin-left: 0.5rem; cursor: pointer; transition: 0.2s ease-in-out color; }
-    .modal .header .close i:hover { @include color('primary-icon-color'); }
+  .modal .header .close i { @include color($secondary-icon-color); font-size: 30px; margin-left: 0.5rem; cursor: pointer; transition: 0.2s ease-in-out color; }
+    .modal .header .close i:hover { @include color($primary-icon-color); }
   .modal .main { flex: 1 0 50%; padding: 1rem 2rem; min-height: 10rem; max-height: 35rem; margin-right: 0.2rem; }
-  .modal .footer { @include border(top, $color: 'secondary-border-color'); padding: 1rem 0.5rem; }
-  .overlay { @include bg-color('overlay-color'); @include fade('show', 0.9, 0.7); @include position(fixed, 0, 0, 0, 0, 29); }
+  .modal .footer { @include border(top, $color: $secondary-border-color); padding: 1rem 0.5rem; }
+  .overlay { @include bg-color($overlay-color); @include fade('show', 0.9, 0.7); @include position(fixed, 0, 0, 0, 0, 29); }
   .modal.closed { @include fade('hide', 0.9); }
     .modal.closed + .overlay { @include fade('hide', 0.9); }
 

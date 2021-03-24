@@ -6,7 +6,7 @@
     .label > span { margin-left: 0.7rem; }
     .label.left { flex-direction: row; }
     .label.left > span { margin-right: 0.7rem; }
-  .wrapper { @include border(null, 5px, 2, 'secondary-icon-color'); @include vertically-centred; position: relative; justify-content: center; width: 20px; height: 20px; background: transparent; }
+  .wrapper { @include border(null, 5px, 2, $secondary-icon-color); @include vertically-centred; position: relative; justify-content: center; width: 20px; height: 20px; background: transparent; }
     .wrapper.hover { @include border(color); transition: ease-in-out 0.3s border-color; }
     .checked { @include border(right, null, 2.2); @include border(bottom, null, 2.2); content: ""; width: 4px; height: 10px; margin-top: -2px; opacity: 0; transform: rotate(30deg); transition: .3s ease-in-out opacity; }
     input:checked + .checked { opacity: 1;}

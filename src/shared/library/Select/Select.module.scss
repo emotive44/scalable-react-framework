@@ -6,14 +6,14 @@
     .container .select .select-value { max-width: 70%; }
     .container .select-value  p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;  }
     .container .select .icons { display: flex; margin: 0 1rem; }
-      .container .select .icons small { @include bg-color('primary-icon-color'); width: 1.5px; margin: 0 1.5rem; }
-      .container .select .icons .icon { @include color('secondary-icon-color'); @include vertically-centred; transition: 0.2s ease-in-out color; }
-        .container .select .icons .icon:hover { @include color('primary-icon-color'); cursor: pointer; }
+      .container .select .icons small { @include bg-color($primary-icon-color); width: 1.5px; margin: 0 1.5rem; }
+      .container .select .icons .icon { @include color($secondary-icon-color); @include vertically-centred; transition: 0.2s ease-in-out color; }
+        .container .select .icons .icon:hover { @include color($primary-icon-color); cursor: pointer; }
       .container .select .icons .icon.arrow { position: relative; transition: 0.4s ease-in-out transform, 0.4s ease-in-out padding; }
-      .container .select .icons .icon.arrow.open { @include color('primary-icon-color'); transform: rotate(180deg); }
+      .container .select .icons .icon.arrow.open { @include color($primary-icon-color); transform: rotate(180deg); }
   .container .options { @include border($radius: 4px); @include fade('hide'); @include position($z-index: 20); width: 100%; max-height: 0; overflow: hidden; }
-    .container .options::-webkit-scrollbar-track { @include theme($theme) { box-shadow: inset 0 0 5px get-theme-color('scroll-color'); }; border-radius: 10px; margin: 0 30px; }
-    .container .options::-webkit-scrollbar-thumb { @include bg-color('scroll-color'); border-radius: 10px; }
+    .container .options::-webkit-scrollbar-track { @include theme($theme) { box-shadow: inset 0 0 5px get-theme-color($scroll-color); }; border-radius: 10px; margin: 0 30px; }
+    .container .options::-webkit-scrollbar-thumb { @include bg-color($scroll-color); border-radius: 10px; }
     .container .options::-webkit-scrollbar { width: 5px; }
     .container .search { width: 70%; margin: 0.5rem 0 1rem 0.5rem; }
     .container .search-msg { width: 80%; margin: 1rem auto; text-align: center; }

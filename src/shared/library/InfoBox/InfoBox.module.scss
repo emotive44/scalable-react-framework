@@ -2,8 +2,8 @@
 
 
 .infobox { @include bg-color(); @include border($radius: 3px); padding: 4px; width: 100%; }
-	.infobox .title { @include bg-color('accent-color'); font-size: 1.9rem; font-weight: 700; text-align: center; padding: 8px 4px; border-radius: 3px 3px 0 0; }
+	.infobox .title { @include bg-color($accent-color); font-size: 1.9rem; font-weight: 700; text-align: center; padding: 8px 4px; border-radius: 3px 3px 0 0; }
 	.infobox .body { width: 100%; display: table; }
-		.infobox .body .cnt { @include color('secondary-text-color'); height: 0.5rem; display: table-cell; font-size: 16px; font-weight: bold; text-align: center; vertical-align: middle; word-break: break-word; padding: 4px; }
-		.infobox .body small { @include color('secondary-text-color'); display: block; font-size: 12px; font-weight: 300; margin-top: 4px; }
-	.infobox i { @include color('secondary-text-color'); font-size: 1.6rem; margin-left: 8px; }
+		.infobox .body .cnt { @include color($secondary-text-color); height: 0.5rem; display: table-cell; font-size: 16px; font-weight: bold; text-align: center; vertical-align: middle; word-break: break-word; padding: 4px; }
+		.infobox .body small { @include color($secondary-text-color); display: block; font-size: 12px; font-weight: 300; margin-top: 4px; }
+	.infobox i { @include color($secondary-text-color); font-size: 1.6rem; margin-left: 8px; }

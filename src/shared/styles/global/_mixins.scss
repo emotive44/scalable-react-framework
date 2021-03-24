@@ -1,5 +1,4 @@
 @import 'functions.scss';
-@import 'variables.scss';
 
 
 @mixin set-background($color) {
@@ -85,7 +84,7 @@
   top: $top;
 }
 
-@mixin border($type: null, $radius: null, $size: 1, $color: 'primary-border-color') {
+@mixin border($type: null, $radius: null, $size: 1, $color: $primary-border-color) {
   @if($type and $type != 'top' and $type != 'right' and $type != 'bottom' and $type != 'left') {
     @include theme($theme) {
       border-#{$type}: get-theme-color($color);
@@ -104,13 +103,13 @@
   }
 }
 
-@mixin color($color: 'primary-text-color') {
+@mixin color($color: $primary-text-color) {
   @include theme($theme) {
     color: get-theme-color($color);
   }
 }
 
-@mixin bg-color($color: 'body-color') {
+@mixin bg-color($color: $body-color) {
   @include theme($theme) {
     background-color: get-theme-color($color);
   }

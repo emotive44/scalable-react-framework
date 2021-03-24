@@ -6,8 +6,8 @@
   .divider span { margin: 1rem; }
   .divider small { width: 1.5px; height: 1.5px; flex: 1; }
   .divider img { @include border($size: 3, $radius: 50%); width: 100px; height: 100px; }
-  .divider .left { @include theme($theme) { background: linear-gradient(to right, transparent, get-theme-color('primary-border-color')); }; }
-  .divider.horizontal .left {@include theme($theme) { background: linear-gradient(to bottom, transparent, get-theme-color('primary-border-color')); }; }
-  .divider .right { @include theme($theme) { background: linear-gradient(to right, get-theme-color('primary-border-color'), transparent); }; }
-  .divider.horizontal .right { @include theme($theme) { background: linear-gradient(to top, transparent, get-theme-color('primary-border-color')); }; }
+  .divider .left { @include theme($theme) { background: linear-gradient(to right, transparent, get-theme-color($primary-border-color)); }; }
+  .divider.horizontal .left {@include theme($theme) { background: linear-gradient(to bottom, transparent, get-theme-color($primary-border-color)); }; }
+  .divider .right { @include theme($theme) { background: linear-gradient(to right, get-theme-color($primary-border-color), transparent); }; }
+  .divider.horizontal .right { @include theme($theme) { background: linear-gradient(to top, transparent, get-theme-color($primary-border-color)); }; }
   

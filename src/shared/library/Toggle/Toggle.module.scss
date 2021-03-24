@@ -5,6 +5,6 @@
   .label.left { flex-direction: row; }
   .label.left .wrapper { margin-left: 1rem; }
   .toggle:checked ~ .wrapper { background-color: get-color(gray, dark); }
-  .toggle:checked ~ .wrapper .checked { right: 5px; @include bg-color('depth-color'); }
+  .toggle:checked ~ .wrapper .checked { right: 5px; @include bg-color($depth-color); }
   .wrapper { background-color: get-color(gray, light); margin-right: 1rem; position: relative; width: 50px; height: 25px; border-radius: 50px; transition: .2s; }
-  .checked { @include bg-color('depth-color'); @include position(absolute, 50%, calc(100% - 20px)); content: ""; width: 15px; height: 15px; border-radius: 50px; transform: translateY(-50%); transition: ease-in-out .3s right; }
+  .checked { @include bg-color($depth-color); @include position(absolute, 50%, calc(100% - 20px)); content: ""; width: 15px; height: 15px; border-radius: 50px; transform: translateY(-50%); transition: ease-in-out .3s right; }
