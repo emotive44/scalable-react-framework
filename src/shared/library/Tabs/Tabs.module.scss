@@ -14,7 +14,7 @@
     .container.top .tabs .tab-link { border-bottom: 3px solid transparent; }
     .container.left .tabs .tab-link,
     .container.right .tabs .tab-link { justify-content: flex-start; }
-      .container .tabs .tab-link:hover { @include theme($theme) { background-color: get-theme-color('accent-color'); }; color: $info-color; }
+      .container .tabs .tab-link:hover { @include bg-color('accent-color'); color: $info-color; }
       .container .tabs .tab-link p { min-width: 4rem; margin-bottom: 0.3rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; align-self: flex-end; }
     .container.top .tabs .tab-link.active-tab { border-bottom: 3px solid $info-color; color: $info-color; transition: border-bottom 0.5s ease-in-out; }
     .container.bottom .tabs .tab-link.active-tab { border-top: 3px solid $info-color; color: $info-color; transition: border-top 0.5s ease-in-out; }

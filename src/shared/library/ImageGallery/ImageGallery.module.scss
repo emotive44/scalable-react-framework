@@ -2,7 +2,7 @@
 
 
 .gallery { width: 90%; margin: 0 auto; display: grid; grid-gap: 0.8rem; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-auto-rows: 20rem; grid-auto-flow: dense; }
-  .gallery img { @include theme($theme) { background-color: get-theme-color('primary-border-color'); }; @include border($size: 3); @include multiple-transition(0.2s, transform, opacity); width: 100%; height: 100%; object-fit: cover; scale: (1); opacity: 0.95; }
+  .gallery img { @include bg-color('primary-border-color'); @include border($size: 3); @include multiple-transition(0.2s, transform, opacity); width: 100%; height: 100%; object-fit: cover; scale: (1); opacity: 0.95; }
     .gallery img:hover { transform: scale(1.02); opacity: 1; }
     .gallery img.panorama { grid-column: span 4; @include break-points('desktop') { grid-column: span 3; }; @include break-points('tablet') { grid-column: span 2; }; }
     .gallery img.landscape { grid-column: span 2; }

@@ -110,6 +110,12 @@
   }
 }
 
+@mixin bg-color($color: 'body-color') {
+  @include theme($theme) {
+    background-color: get-theme-color($color);
+  }
+}
+
 @mixin vertically-centred {
   display: flex;
   align-items: center;

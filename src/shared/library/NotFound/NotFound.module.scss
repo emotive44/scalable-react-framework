@@ -1,7 +1,7 @@
 @import '../styles.scss';
 
 
-.nofound { @include theme($theme) { background-color: get-theme-color('accent-color'); }; font-size: 14px; text-align: center; padding: 16px; border-radius: 3px; }
+.nofound { @include bg-color('accent-color'); font-size: 14px; text-align: center; padding: 16px; border-radius: 3px; }
 	.nofound h2 { font-size: 15px; font-weight: 500; margin: 0; padding: 0; }
 	.nofound .message { font-size: 13px; font-weight: 300; margin-top: 8px; }
 		.nofound .message.nom { margin-top: 0; }

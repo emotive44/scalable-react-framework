@@ -8,5 +8,5 @@
   .wrapper { @include border(null, 50px, 2.5, 'secondary-border-color'); @include vertically-centred; position: relative; justify-content: center; width: 23px; height: 23px; background-color: transparent; }
   .wrapper.hover { @include border(color); transition: ease-in-out 0.3s border-color; }
   .wrapper.check { @include border($size: 2.5, $color: 'secondary-border-color'); }
-  .checked { @include theme($theme) { background-color: get-theme-color('secondary-border-color'); }; content: ""; width: 9px; height: 9px; border-radius: 50px; opacity: 0; transition: ease-in-out 0.4s opacity; }
+  .checked { @include bg-color('secondary-border-color'); content: ""; width: 9px; height: 9px; border-radius: 50px; opacity: 0; transition: ease-in-out 0.4s opacity; }
   input:checked + .checked { opacity: 1; }
