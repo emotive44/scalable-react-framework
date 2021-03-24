@@ -1,7 +1,7 @@
-import React, { FC, ReactElement, useState, useRef, useEffect } from 'react';
+import React, { FC, ReactElement } from 'react';
 import classes from './TimelineItem.module.scss';
 import moment from 'moment';
-
+import useAnimateItemOnShow from '../../hooks/useAnimateItemOnShow';
 
 const colors: any = {
   '1'		: '#EBB65D',
@@ -37,25 +37,10 @@ const TimelineItem:FC<TimelineItemProps> = ({
   dateFormat,
 }) => {
   const month = moment(date).format('M');
-
-  const ref = useRef(null);
-  const [signClasses, setSignClasses] = useState([classes.sign]);
- 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      let isShow = entries[0].isIntersecting;
-      if(isShow) {
-        setSignClasses(prev => [...prev, classes.animate]);
-      } else {
-        setSignClasses(prev => [...prev.filter(cl => cl !== classes.animate)]);
-      }
-    });
-
-    observer.observe(ref.current!);
-  }, [ref]);
+  const { ref, animateClass } = useAnimateItemOnShow();
 
   return (
-    <div ref={ref} className={signClasses.join(' ')}>
+    <div ref={ref} className={[classes.sign, classes[animateClass]].join(' ')}>
       {icon && (
           <span className={classes.icon} style={{ backgroundColor: colors[month] }}>
             {icon}

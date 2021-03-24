@@ -1,5 +1,6 @@
 import React, { FC, ReactElement, ReactNode, useEffect } from 'react';
 import classes from './SelectOption.module.scss';
+import useAnimateItemOnShow from '../../hooks/useAnimateItemOnShow';
 
 import Tag from '../Tag/Tag';
 import { IOption } from './Select';
@@ -32,6 +33,8 @@ const SelectOption:FC<SelectOptionProps> = ({
   setSelectValue,
   customTempValue,
 }) => {
+  const { ref, animateClass } = useAnimateItemOnShow();
+
   let content: ReactNode = null;
   if(template) {
     content = template;
@@ -132,7 +135,7 @@ const SelectOption:FC<SelectOptionProps> = ({
   }
 
   return (
-    <div className={optionClasses.join(' ')} onClick={clickHendler} >
+    <div ref={ref} className={[...optionClasses, classes[animateClass]].join(' ')} onClick={clickHendler} >
       {content}
       {checked && (
          <span className={classes.checked}>
