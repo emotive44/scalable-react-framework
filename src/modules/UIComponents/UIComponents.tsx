@@ -648,7 +648,7 @@ const UIComponents:FC = () => {
       </div>
 
       <div style={{ width: '90%', margin: '0 auto' }}>
-        <ImageGallery imgsData={arrayWithImgs} />
+        <ImageGallery imgsData={arrayWithImgs} size='normal' />
       </div>
 
       <Button fullWidth>
